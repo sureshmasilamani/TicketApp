@@ -1,0 +1,26 @@
+<h1>Tickets</h1></br>
+<div class="container">
+  <table border="1">
+    <tr>
+    <th>RequestNumber</th>
+    <th>SequenceNumber</th>
+    <th>DateTimes</th>
+    <th>ServiceArea</th>
+    <th>DigsiteInfo</th>
+    <th>Excavators</th>
+    </tr>
+   <tbody>
+  <% @tickets.each do|ticket| %>
+   <tr>
+     <td> <%= ticket.RequestNumber %> </td>
+     <td> <%= ticket.SequenceNumber %> </td>
+     <td> <%= ticket.DateTimes %> </td>
+     <td> <%= ticket.ServiceArea %> </td>
+     <td> <%= ticket.DigsiteInfo %> </td>
+     <td> <%= link_to 'Excavators', ticket_path(ticket) %> </td>
+
+   </tr>
+  <% end %>
+   </tbody>
+  </table>
+</div>

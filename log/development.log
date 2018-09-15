@@ -1,242 +1,140 @@
-  [1m[35m (586.2ms)[0m  [1m[35mCREATE DATABASE "ticket_api" ENCODING = 'utf8'[0m
+Started GET "/" for ::1 at 2018-09-14 10:39:28 +0530
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for ::1 at 2018-09-14 10:41:07 +0530
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   ↳ bin/rails:9
-  [1m[35m (2.4ms)[0m  [1m[35mCREATE DATABASE "ticket_api" ENCODING = 'utf8'[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
   ↳ bin/rails:9
-  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
   ↳ bin/rails:9
-  [1m[35m (21.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
-  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6011230848361771095)[0m
+Migrating to CreateExcavators (20180914045451)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
   ↳ bin/rails:9
-  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "excavators" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180914045451_create_excavators.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180914045451"]]
   ↳ bin/rails:9
-Migrating to CreateTickets (20180913185036)
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
   ↳ bin/rails:9
-  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" bigserial primary key, "RequestNumber" integer, "SequenceNumber" integer, "RequestType" character varying, "DateTimes" hstore, "ServiceArea" hstore, "DigsiteInfo" hstore, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/migrate/20180913185036_create_tickets.rb:3
-  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Migrating to CreateTickets (20180914045648)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   ↳ bin/rails:9
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6011230848361771095)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180914045648_create_tickets.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180914045648"]]
   ↳ bin/rails:9
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6011230848361771095)[0m
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
   ↳ bin/rails:9
-  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   ↳ bin/rails:9
-Migrating to CreateTickets (20180913185036)
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   ↳ bin/rails:9
-  [1m[35mSQL (33.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "hstore"[0m
-  ↳ db/migrate/20180913185036_create_tickets.rb:3
-  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" bigserial primary key, "RequestNumber" integer, "SequenceNumber" integer, "RequestType" character varying, "DateTimes" hstore, "ServiceArea" hstore, "DigsiteInfo" hstore, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/migrate/20180913185036_create_tickets.rb:4
-  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180913185036"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-14 05:11:24.676693"], ["updated_at", "2018-09-14 05:11:24.676693"]]
   ↳ bin/rails:9
-  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
   ↳ bin/rails:9
-Migrating to CreateExcavators (20180913185121)
-  [1m[35m (5.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
-  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
-  ↳ bin/rails:9
-  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6011230848361771095)[0m
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6011230848361771095)[0m
-  ↳ bin/rails:9
-  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-Migrating to CreateExcavators (20180913185121)
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ bin/rails:9
-  [1m[35m (20.8ms)[0m  [1m[35mCREATE TABLE "excavators" ("id" bigserial primary key, "Excavator" hstore, "ticket_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/migrate/20180913185121_create_excavators.rb:4
-  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_excavators_on_ticket_id" ON "excavators"  ("ticket_id")[0m
-  ↳ db/migrate/20180913185121_create_excavators.rb:4
-  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180913185121"]]
-  ↳ bin/rails:9
-  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ bin/rails:9
-  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ bin/rails:9
-  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-13 19:14:20.334520"], ["updated_at", "2018-09-13 19:14:20.334520"]]
-  ↳ bin/rails:9
-  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
-  ↳ bin/rails:9
-  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(6011230848361771095)[0m
-  ↳ bin/rails:9
-  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 01:03:16 +0530
-  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2018-09-14 10:42:01 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/prakash_muthu/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
-Processing by TicketsController#create as */*
-Completed 204 No Content in 14054ms (ActiveRecord: 0.0ms)
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:11
+  Rendered tickets/index.erb within layouts/application (3.0ms)
+Completed 200 OK in 821ms (Views: 800.6ms | ActiveRecord: 0.6ms)
 
 
-Started POST "/tickets?{%20%22ContactCenter%22=%22UPCA%22,%20%22RequestNumber%22:%20%2209252012-00001%22,%20%22ReferenceRequestNumber%22:%20%22%22,%20%22VersionNumber%22:%20%220%22,%20%22SequenceNumber%22:%20%222421%22,%20%22RequestType%22:%20%22Normal%22,%20%22RequestAction%22:%20%22Restake%22,%20%22DateTimes%22:%20{%20%22RequestTakenDateTime%22:%20%222011/07/02%2023:09:38%22,%20%22TransmissionDateTime%22:%20%22%22,%20%22LegalDateTime%22:%20%222011/07/08%2007%20%22RestakeDate%22:%20%222011/07/21%2000:00:00%22,%20%22ExpirationDate%22:%20%222011/07/26%2000:00:00%22,%20%22LPMeetingAcceptDueDate%22:%20%22%22,%20%22OverheadBeginDate%22:%20%22%22,%20%22OverheadEndDate%22:%20%22%22%20},%20%22ServiceArea%22:%20{%20%22PrimaryServiceAreaCode%22:%20{%20%22SACode%22:%20%22ZZGL103%22%20},%20%22AdditionalServiceAreaCodes%22:%20{%20%22SACode%22:%20[%20%22ZZL01%22,%20%22ZZL02%22,%20%22ZZL03%22%20]%20}%20},%20%22Excavator%22:%20{%20%22CompanyName%22:%20%22John%20Doe%20CONSTRUCTION%22,%20%22Address%22:%20%22555%20Some%20RD%22,%20%22City%22:%20%22SOME%20PARK%22,%20%22State%22:%20%22ZZ%22,%20%22Zip%22:%20%2255555%22,%20%22Type%22:%20%22Excavator%22,%20%22Contact%22:%20{%20%22Name%22:%20%22Johnny%20Doe%22,%20%22Phone%22:%20%221115552345%22,%20%22Email%22:%20%22example@example.com%22%20},%20%22FieldContact%22:%20{%20%22Name%22:%20%22Field%20Contact%22,%20%22Phone%22:%20%221235557924%22,%20%22Email%22:%20%22example@example.com%22%20},%20%22CrewOnsite%22:%20%22true%22%20},%20%22ExcavationInfo%22:%20{%20%22TypeOfWork%22:%20%22rpr%20man%20hole%20tops%22,%20%22WorkDoneFor%22:%20%22gpc%22,%20%22ProjectDuration%22:%20%2260%20days%22,%20%22ProjectStartDate%22:%20%222011/07/08%2007:00:00%22,%20%22Explosives%22:%20%22No%22,%20%22UndergroundOverhead%22:%20%22Underground%22,%20%22HorizontalBoring%22:%20%22Road,%20Driveway,%20and%20Sidewalk%22,%20%22Whitelined%22:%20%22No%22,%20%22LocateInstructions%22:%20%22locate%20along%20the%20r/o/w%20on%20both%20sides%20of%20the%20rd%20-%20including%20the%20rd%20itself%20-%20from%20inter%20to%20inter%20%22,%20%22Remarks%22:%20%22Previous%20Request%20Number:05161-120-011\n\n\t\t\tPrevious%20Request%20Number:06044-254-020\n\n\t\t\tPrevious%20Request%20Number:06171-300-030%22,%20%22DigsiteInfo%22:%20{%20%22LookupBy%22:%20%22MANUAL%22,%20%22LocationType%22:%20%22Multiple%20Address%22,%20%22Subdivision%22:%20%22%22,%20%22AddressInfo%22:%20{%20%22State%22:%20%22ST%22,%20%22County%22:%20%22COUNTY%22,%20%22Place%22:%20%22PLACE%22,%20%22Zip%22:%20%22%22,%20%22Address%22:%20{%20%22AddressNum%22:%20[%20%22Address%201%22,%20%22Address%202%22%20]%20},%20%22Street%22:%20{%20%22Prefix%22:%20%22%22,%20%22Name%22:%20%22Trinity%22,%20%22Type%22:%20%22Ave%22,%20%22Suffix%22:%20%22SW%22%20}%20},%20%22NearStreet%22:%20{%20%22State%22:%20%22XX%22,%20%22County%22:%20%22SomeCounty%22,%20%22Place%22:%20%22City%22,%20%22Prefix%22:%20%22%22,%20%22Name%22:%20%22%22,%20%22Type%22:%20%22%22,%20%22Suffix%22:%20%22%22%20},%20%22Intersection%22:%20{%20%22ItoI%22:%20[{%20%22State%22:%20%22XX%22,%20%22County%22:%20%22FULERTON%22,%20%22Place%22:%20%22NORCROSS%22,%20%22Prefix%22:%20%22%22,%20%22Name%22:%20%22London%22,%20%22Type%22:%20%22St%22,%20%22Suffix%22:%20%22SW%22%20},%20{%20%22State%22:%20%22ZZ%22,%20%22County%22:%20%22COUNTY%22,%20%22Place%22:%20%22ATLANTA%22,%20%22Prefix%22:%20%22%22,%20%22Name%22:%20%22Jefferson%22,%20%22Type%22:%20%22Ave%22,%20%22Suffix%22:%20%22SW%22%20}%20]%20},%20%22WellKnownText%22:%20%22POLYGON((-81.13390268058475%2032.07206917625161,-81.14660562247929%2032.04064386441295,-81.08858407706913%2032.02259853170128,-81.05322183341679%2032.02434500961698,-81.05047525138554%2032.042681017283066,-81.0319358226746%2032.06537765335268,-81.01202310294804%2032.078469305179404,-81.02850259513554%2032.07963291684719,-81.07759774894413%2032.07090546831167,-81.12154306144413%2032.08806865844325,-81.13390268058475%2032.07206917625161))%E2%80%9D}}}" for 127.0.0.1 at 2018-09-14 01:04:39 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"{ \"ContactCenter\""=>"\"UPCA\", \"RequestNumber\": \"09252012-00001\", \"ReferenceRequestNumber\": \"\", \"VersionNumber\": \"0\", \"SequenceNumber\": \"2421\", \"RequestType\": \"Normal\", \"RequestAction\": \"Restake\", \"DateTimes\": { \"RequestTakenDateTime\": \"2011/07/02 23:09:38\", \"TransmissionDateTime\": \"\", \"LegalDateTime\": \"2011/07/08 07 \"RestakeDate\": \"2011/07/21 00:00:00\", \"ExpirationDate\": \"2011/07/26 00:00:00\", \"LPMeetingAcceptDueDate\": \"\", \"OverheadBeginDate\": \"\", \"OverheadEndDate\": \"\" }, \"ServiceArea\": { \"PrimaryServiceAreaCode\": { \"SACode\": \"ZZGL103\" }, \"AdditionalServiceAreaCodes\": { \"SACode\": [ \"ZZL01\", \"ZZL02\", \"ZZL03\" ] } }, \"Excavator\": { \"CompanyName\": \"John Doe CONSTRUCTION\", \"Address\": \"555 Some RD\", \"City\": \"SOME PARK\", \"State\": \"ZZ\", \"Zip\": \"55555\", \"Type\": \"Excavator\", \"Contact\": { \"Name\": \"Johnny Doe\", \"Phone\": \"1115552345\", \"Email\": \"example@example.com\" }, \"FieldContact\": { \"Name\": \"Field Contact\", \"Phone\": \"1235557924\", \"Email\": \"example@example.com\" }, \"CrewOnsite\": \"true\" }, \"ExcavationInfo\": { \"TypeOfWork\": \"rpr man hole tops\", \"WorkDoneFor\": \"gpc\", \"ProjectDuration\": \"60 days\", \"ProjectStartDate\": \"2011/07/08 07:00:00\", \"Explosives\": \"No\", \"UndergroundOverhead\": \"Underground\", \"HorizontalBoring\": \"Road, Driveway, and Sidewalk\", \"Whitelined\": \"No\", \"LocateInstructions\": \"locate along the r/o/w on both sides of the rd - including the rd itself - from inter to inter \", \"Remarks\": \"Previous Request Number:05161-120-011\\n\\n\\t\\t\\tPrevious Request Number:06044-254-020\\n\\n\\t\\t\\tPrevious Request Number:06171-300-030\", \"DigsiteInfo\": { \"LookupBy\": \"MANUAL\", \"LocationType\": \"Multiple Address\", \"Subdivision\": \"\", \"AddressInfo\": { \"State\": \"ST\", \"County\": \"COUNTY\", \"Place\": \"PLACE\", \"Zip\": \"\", \"Address\": { \"AddressNum\": [ \"Address 1\", \"Address 2\" ] }, \"Street\": { \"Prefix\": \"\", \"Name\": \"Trinity\", \"Type\": \"Ave\", \"Suffix\": \"SW\" } }, \"NearStreet\": { \"State\": \"XX\", \"County\": \"SomeCounty\", \"Place\": \"City\", \"Prefix\": \"\", \"Name\": \"\", \"Type\": \"\", \"Suffix\": \"\" }, \"Intersection\": { \"ItoI\": [{ \"State\": \"XX\", \"County\": \"FULERTON\", \"Place\": \"NORCROSS\", \"Prefix\": \"\", \"Name\": \"London\", \"Type\": \"St\", \"Suffix\": \"SW\" }, { \"State\": \"ZZ\", \"County\": \"COUNTY\", \"Place\": \"ATLANTA\", \"Prefix\": \"\", \"Name\": \"Jefferson\", \"Type\": \"Ave\", \"Suffix\": \"SW\" } ] }, \"WellKnownText\": \"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))”}}}"}
-Completed 204 No Content in 120609ms (ActiveRecord: 0.0ms)
+Started GET "/" for ::1 at 2018-09-14 10:43:06 +0530
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:11
+  Rendered tickets/index.erb within layouts/application (1.8ms)
+Completed 200 OK in 36ms (Views: 30.9ms | ActiveRecord: 0.2ms)
 
 
-Started POST "/tickets?json_date%20=%20{%20%22ContactCenter%22=%22UPCA%22,%20%22RequestNumber%22:%20%2209252012-00001%22,%20%22ReferenceRequestNumber%22:%20%22%22,%20%22VersionNumber%22:%20%220%22,%20%22SequenceNumber%22:%20%222421%22,%20%22RequestType%22:%20%22Normal%22,%20%22RequestAction%22:%20%22Restake%22,%20%22DateTimes%22:%20{%20%22RequestTakenDateTime%22:%20%222011/07/02%2023:09:38%22,%20%22TransmissionDateTime%22:%20%22%22,%20%22LegalDateTime%22:%20%222011/07/08%2007%20%22RestakeDate%22:%20%222011/07/21%2000:00:00%22,%20%22ExpirationDate%22:%20%222011/07/26%2000:00:00%22,%20%22LPMeetingAcceptDueDate%22:%20%22%22,%20%22OverheadBeginDate%22:%20%22%22,%20%22OverheadEndDate%22:%20%22%22%20},%20%22ServiceArea%22:%20{%20%22PrimaryServiceAreaCode%22:%20{%20%22SACode%22:%20%22ZZGL103%22%20},%20%22AdditionalServiceAreaCodes%22:%20{%20%22SACode%22:%20[%20%22ZZL01%22,%20%22ZZL02%22,%20%22ZZL03%22%20]%20}%20},%20%22Excavator%22:%20{%20%22CompanyName%22:%20%22John%20Doe%20CONSTRUCTION%22,%20%22Address%22:%20%22555%20Some%20RD%22,%20%22City%22:%20%22SOME%20PARK%22,%20%22State%22:%20%22ZZ%22,%20%22Zip%22:%20%2255555%22,%20%22Type%22:%20%22Excavator%22,%20%22Contact%22:%20{%20%22Name%22:%20%22Johnny%20Doe%22,%20%22Phone%22:%20%221115552345%22,%20%22Email%22:%20%22example@example.com%22%20},%20%22FieldContact%22:%20{%20%22Name%22:%20%22Field%20Contact%22,%20%22Phone%22:%20%221235557924%22,%20%22Email%22:%20%22example@example.com%22%20},%20%22CrewOnsite%22:%20%22true%22%20},%20%22ExcavationInfo%22:%20{%20%22TypeOfWork%22:%20%22rpr%20man%20hole%20tops%22,%20%22WorkDoneFor%22:%20%22gpc%22,%20%22ProjectDuration%22:%20%2260%20days%22,%20%22ProjectStartDate%22:%20%222011/07/08%2007:00:00%22,%20%22Explosives%22:%20%22No%22,%20%22UndergroundOverhead%22:%20%22Underground%22,%20%22HorizontalBoring%22:%20%22Road,%20Driveway,%20and%20Sidewalk%22,%20%22Whitelined%22:%20%22No%22,%20%22LocateInstructions%22:%20%22locate%20along%20the%20r/o/w%20on%20both%20sides%20of%20the%20rd%20-%20including%20the%20rd%20itself%20-%20from%20inter%20to%20inter%20%22,%20%22Remarks%22:%20%22Previous%20Request%20Number:05161-120-011\n\n\t\t\tPrevious%20Request%20Number:06044-254-020\n\n\t\t\tPrevious%20Request%20Number:06171-300-030%22,%20%22DigsiteInfo%22:%20{%20%22LookupBy%22:%20%22MANUAL%22,%20%22LocationType%22:%20%22Multiple%20Address%22,%20%22Subdivision%22:%20%22%22,%20%22AddressInfo%22:%20{%20%22State%22:%20%22ST%22,%20%22County%22:%20%22COUNTY%22,%20%22Place%22:%20%22PLACE%22,%20%22Zip%22:%20%22%22,%20%22Address%22:%20{%20%22AddressNum%22:%20[%20%22Address%201%22,%20%22Address%202%22%20]%20},%20%22Street%22:%20{%20%22Prefix%22:%20%22%22,%20%22Name%22:%20%22Trinity%22,%20%22Type%22:%20%22Ave%22,%20%22Suffix%22:%20%22SW%22%20}%20},%20%22NearStreet%22:%20{%20%22State%22:%20%22XX%22,%20%22County%22:%20%22SomeCounty%22,%20%22Place%22:%20%22City%22,%20%22Prefix%22:%20%22%22,%20%22Name%22:%20%22%22,%20%22Type%22:%20%22%22,%20%22Suffix%22:%20%22%22%20},%20%22Intersection%22:%20{%20%22ItoI%22:%20[{%20%22State%22:%20%22XX%22,%20%22County%22:%20%22FULERTON%22,%20%22Place%22:%20%22NORCROSS%22,%20%22Prefix%22:%20%22%22,%20%22Name%22:%20%22London%22,%20%22Type%22:%20%22St%22,%20%22Suffix%22:%20%22SW%22%20},%20{%20%22State%22:%20%22ZZ%22,%20%22County%22:%20%22COUNTY%22,%20%22Place%22:%20%22ATLANTA%22,%20%22Prefix%22:%20%22%22,%20%22Name%22:%20%22Jefferson%22,%20%22Type%22:%20%22Ave%22,%20%22Suffix%22:%20%22SW%22%20}%20]%20},%20%22WellKnownText%22:%20%22POLYGON((-81.13390268058475%2032.07206917625161,-81.14660562247929%2032.04064386441295,-81.08858407706913%2032.02259853170128,-81.05322183341679%2032.02434500961698,-81.05047525138554%2032.042681017283066,-81.0319358226746%2032.06537765335268,-81.01202310294804%2032.078469305179404,-81.02850259513554%2032.07963291684719,-81.07759774894413%2032.07090546831167,-81.12154306144413%2032.08806865844325,-81.13390268058475%2032.07206917625161))%E2%80%9D}}}" for 127.0.0.1 at 2018-09-14 01:06:44 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"json_date "=>" { \"ContactCenter\"=\"UPCA\", \"RequestNumber\": \"09252012-00001\", \"ReferenceRequestNumber\": \"\", \"VersionNumber\": \"0\", \"SequenceNumber\": \"2421\", \"RequestType\": \"Normal\", \"RequestAction\": \"Restake\", \"DateTimes\": { \"RequestTakenDateTime\": \"2011/07/02 23:09:38\", \"TransmissionDateTime\": \"\", \"LegalDateTime\": \"2011/07/08 07 \"RestakeDate\": \"2011/07/21 00:00:00\", \"ExpirationDate\": \"2011/07/26 00:00:00\", \"LPMeetingAcceptDueDate\": \"\", \"OverheadBeginDate\": \"\", \"OverheadEndDate\": \"\" }, \"ServiceArea\": { \"PrimaryServiceAreaCode\": { \"SACode\": \"ZZGL103\" }, \"AdditionalServiceAreaCodes\": { \"SACode\": [ \"ZZL01\", \"ZZL02\", \"ZZL03\" ] } }, \"Excavator\": { \"CompanyName\": \"John Doe CONSTRUCTION\", \"Address\": \"555 Some RD\", \"City\": \"SOME PARK\", \"State\": \"ZZ\", \"Zip\": \"55555\", \"Type\": \"Excavator\", \"Contact\": { \"Name\": \"Johnny Doe\", \"Phone\": \"1115552345\", \"Email\": \"example@example.com\" }, \"FieldContact\": { \"Name\": \"Field Contact\", \"Phone\": \"1235557924\", \"Email\": \"example@example.com\" }, \"CrewOnsite\": \"true\" }, \"ExcavationInfo\": { \"TypeOfWork\": \"rpr man hole tops\", \"WorkDoneFor\": \"gpc\", \"ProjectDuration\": \"60 days\", \"ProjectStartDate\": \"2011/07/08 07:00:00\", \"Explosives\": \"No\", \"UndergroundOverhead\": \"Underground\", \"HorizontalBoring\": \"Road, Driveway, and Sidewalk\", \"Whitelined\": \"No\", \"LocateInstructions\": \"locate along the r/o/w on both sides of the rd - including the rd itself - from inter to inter \", \"Remarks\": \"Previous Request Number:05161-120-011\\n\\n\\t\\t\\tPrevious Request Number:06044-254-020\\n\\n\\t\\t\\tPrevious Request Number:06171-300-030\", \"DigsiteInfo\": { \"LookupBy\": \"MANUAL\", \"LocationType\": \"Multiple Address\", \"Subdivision\": \"\", \"AddressInfo\": { \"State\": \"ST\", \"County\": \"COUNTY\", \"Place\": \"PLACE\", \"Zip\": \"\", \"Address\": { \"AddressNum\": [ \"Address 1\", \"Address 2\" ] }, \"Street\": { \"Prefix\": \"\", \"Name\": \"Trinity\", \"Type\": \"Ave\", \"Suffix\": \"SW\" } }, \"NearStreet\": { \"State\": \"XX\", \"County\": \"SomeCounty\", \"Place\": \"City\", \"Prefix\": \"\", \"Name\": \"\", \"Type\": \"\", \"Suffix\": \"\" }, \"Intersection\": { \"ItoI\": [{ \"State\": \"XX\", \"County\": \"FULERTON\", \"Place\": \"NORCROSS\", \"Prefix\": \"\", \"Name\": \"London\", \"Type\": \"St\", \"Suffix\": \"SW\" }, { \"State\": \"ZZ\", \"County\": \"COUNTY\", \"Place\": \"ATLANTA\", \"Prefix\": \"\", \"Name\": \"Jefferson\", \"Type\": \"Ave\", \"Suffix\": \"SW\" } ] }, \"WellKnownText\": \"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))”}}}"}
-Completed 500 Internal Server Error in 1048326ms (ActiveRecord: 0.0ms)
+Started GET "/" for ::1 at 2018-09-14 10:43:11 +0530
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:11
+  Rendered tickets/index.erb within layouts/application (1.4ms)
+Completed 200 OK in 33ms (Views: 28.8ms | ActiveRecord: 0.2ms)
 
 
-  
-Errno::EIO (Input/output error @ io_write - <STDOUT>):
-  
-app/controllers/tickets_controller.rb:3:in `create'
-Started POST "/tickets?{&%22RequestNumber%22=%2209252012-00001%22,&%22ReferenceRequestNumber%22=%22%22,&%22SequenceNumber%22=%222421%22,&%22RequestType%22=%22Normal%22,&%22DateTimes%22&{&%22RequestTakenDateTime%22=%222011/07/02%2023:09:38%22,&%22TransmissionDateTime%22=%22%22,&%22LegalDateTime%22=%222011/07/08%2007%E2%80%9D,&%E2%80%9CRestakeDate%22=%222011/07/21%2000:00:00%22,&%22ExpirationDate%22=%222011/07/26%2000:00:00%22,&%22LPMeetingAcceptDueDate%22=%22%22,&%22OverheadBeginDate%22=%22%22,&%22OverheadEndDate%22=%22%22&},&%22ServiceArea%22&{&%22PrimaryServiceAreaCode%22&{&%22SACode%22=%22ZZGL103%22&},&%22AdditionalServiceAreaCodes%22&{&%22SACode%22=[%20%22ZZL01%22,%20%22ZZL02%22,%20%22ZZL03%22]&}&},&%22Excavator%22&{&%22CompanyName%22=%22John%20Doe%20CONSTRUCTION%22,&%22Address%22=%22555%20Some%20RD%22,&%22City%22=%22SOME%20PARK%22,&%22State%22=%22ZZ%22,&%22Zip%22=%2255555%E2%80%9D,&%E2%80%9DCrewOnsite%22=%22true%22&},&%22DigsiteInfo%22&{&%22WellKnownText%22=%22POLYGON((-81.13390268058475%2032.07206917625161,-81.14660562247929%2032.04064386441295,-81.08858407706913%2032.02259853170128,-81.05322183341679%2032.02434500961698,-81.05047525138554%2032.042681017283066,-81.0319358226746%2032.06537765335268,-81.01202310294804%2032.078469305179404,-81.02850259513554%2032.07963291684719,-81.07759774894413%2032.07090546831167,-81.12154306144413%2032.08806865844325,-81.13390268058475%2032.07206917625161))%E2%80%9D}" for 127.0.0.1 at 2018-09-14 08:11:54 +0530
-  [1m[35m (6.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2018-09-14 10:44:39 +0530
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/prakash_muthu/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
-Processing by TicketsController#create as */*
-  Parameters: {"{"=>nil, "\"RequestNumber\""=>"\"09252012-00001\",", "\"ReferenceRequestNumber\""=>"\"\",", "\"SequenceNumber\""=>"\"2421\",", "\"RequestType\""=>"\"Normal\",", "\"DateTimes\""=>nil, "\"RequestTakenDateTime\""=>"\"2011/07/02 23:09:38\",", "\"TransmissionDateTime\""=>"\"\",", "\"LegalDateTime\""=>"\"2011/07/08 07”,", "“RestakeDate\""=>"\"2011/07/21 00:00:00\",", "\"ExpirationDate\""=>"\"2011/07/26 00:00:00\",", "\"LPMeetingAcceptDueDate\""=>"\"\",", "\"OverheadBeginDate\""=>"\"\",", "\"OverheadEndDate\""=>"\"\"", "},"=>nil, "\"ServiceArea\""=>nil, "\"PrimaryServiceAreaCode\""=>nil, "\"SACode\""=>"[ \"ZZL01\", \"ZZL02\", \"ZZL03\"]", "\"AdditionalServiceAreaCodes\""=>nil, "}"=>nil, "\"Excavator\""=>nil, "\"CompanyName\""=>"\"John Doe CONSTRUCTION\",", "\"Address\""=>"\"555 Some RD\",", "\"City\""=>"\"SOME PARK\",", "\"State\""=>"\"ZZ\",", "\"Zip\""=>"\"55555”,", "”CrewOnsite\""=>"\"true\"", "\"DigsiteInfo\""=>nil, "\"WellKnownText\""=>"\"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))”}"}
-Completed 204 No Content in 81558ms (ActiveRecord: 0.0ms)
-
-
-Started POST "/tickets?%22json_data%22=%22{&%22RequestNumber%22=%2209252012-00001%22,&%22ReferenceRequestNumber%22=%22%22,&%22SequenceNumber%22=%222421%22,&%22RequestType%22=%22Normal%22,&%22DateTimes%22&{&%22RequestTakenDateTime%22=%222011/07/02%2023:09:38%22,&%22TransmissionDateTime%22=%22%22,&%22LegalDateTime%22=%222011/07/08%2007%E2%80%9D,&%E2%80%9CRestakeDate%22=%222011/07/21%2000:00:00%22,&%22ExpirationDate%22=%222011/07/26%2000:00:00%22,&%22LPMeetingAcceptDueDate%22=%22%22,&%22OverheadBeginDate%22=%22%22,&%22OverheadEndDate%22=%22%22&},&%22ServiceArea%22&{&%22PrimaryServiceAreaCode%22&{&%22SACode%22=%22ZZGL103%22&},&%22AdditionalServiceAreaCodes%22&{&%22SACode%22=[%20%22ZZL01%22,%20%22ZZL02%22,%20%22ZZL03%22]&}&},&%22Excavator%22&{&%22CompanyName%22=%22John%20Doe%20CONSTRUCTION%22,&%22Address%22=%22555%20Some%20RD%22,&%22City%22=%22SOME%20PARK%22,&%22State%22=%22ZZ%22,&%22Zip%22=%2255555%E2%80%9D,&%E2%80%9DCrewOnsite%22=%22true%22&},&%22DigsiteInfo%22&{&%22WellKnownText%22=%22POLYGON((-81.13390268058475%2032.07206917625161,-81.14660562247929%2032.04064386441295,-81.08858407706913%2032.02259853170128,-81.05322183341679%2032.02434500961698,-81.05047525138554%2032.042681017283066,-81.0319358226746%2032.06537765335268,-81.01202310294804%2032.078469305179404,-81.02850259513554%2032.07963291684719,-81.07759774894413%2032.07090546831167,-81.12154306144413%2032.08806865844325,-81.13390268058475%2032.07206917625161))%E2%80%9D}%22" for 127.0.0.1 at 2018-09-14 08:13:21 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"\"json_data\""=>"\"{", "\"RequestNumber\""=>"\"09252012-00001\",", "\"ReferenceRequestNumber\""=>"\"\",", "\"SequenceNumber\""=>"\"2421\",", "\"RequestType\""=>"\"Normal\",", "\"DateTimes\""=>nil, "{"=>nil, "\"RequestTakenDateTime\""=>"\"2011/07/02 23:09:38\",", "\"TransmissionDateTime\""=>"\"\",", "\"LegalDateTime\""=>"\"2011/07/08 07”,", "“RestakeDate\""=>"\"2011/07/21 00:00:00\",", "\"ExpirationDate\""=>"\"2011/07/26 00:00:00\",", "\"LPMeetingAcceptDueDate\""=>"\"\",", "\"OverheadBeginDate\""=>"\"\",", "\"OverheadEndDate\""=>"\"\"", "},"=>nil, "\"ServiceArea\""=>nil, "\"PrimaryServiceAreaCode\""=>nil, "\"SACode\""=>"[ \"ZZL01\", \"ZZL02\", \"ZZL03\"]", "\"AdditionalServiceAreaCodes\""=>nil, "}"=>nil, "\"Excavator\""=>nil, "\"CompanyName\""=>"\"John Doe CONSTRUCTION\",", "\"Address\""=>"\"555 Some RD\",", "\"City\""=>"\"SOME PARK\",", "\"State\""=>"\"ZZ\",", "\"Zip\""=>"\"55555”,", "”CrewOnsite\""=>"\"true\"", "\"DigsiteInfo\""=>nil, "\"WellKnownText\""=>"\"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))”}\""}
-Completed 204 No Content in 186432ms (ActiveRecord: 0.0ms)
-
-
-Started POST "/tickets?%E2%80%9CJsonData%E2%80%9D={&%22RequestNumber%22=%2209252012-00001%22,&%22ReferenceRequestNumber%22=%22%22,&%22SequenceNumber%22=%222421%22,&%22RequestType%22=%22Normal%22,&%22DateTimes%22&{&%22RequestTakenDateTime%22=%222011/07/02%2023:09:38%22,&%22TransmissionDateTime%22=%22%22,&%22LegalDateTime%22=%222011/07/08%2007%E2%80%9D,&%E2%80%9CRestakeDate%22=%222011/07/21%2000:00:00%22,&%22ExpirationDate%22=%222011/07/26%2000:00:00%22,&%22LPMeetingAcceptDueDate%22=%22%22,&%22OverheadBeginDate%22=%22%22,&%22OverheadEndDate%22=%22%22&},&%22ServiceArea%22&{&%22PrimaryServiceAreaCode%22&{&%22SACode%22=%22ZZGL103%22&},&%22AdditionalServiceAreaCodes%22&{&%22SACode%22=[%20%22ZZL01%22,%20%22ZZL02%22,%20%22ZZL03%22]&}&},&%22Excavator%22&{&%22CompanyName%22=%22John%20Doe%20CONSTRUCTION%22,&%22Address%22=%22555%20Some%20RD%22,&%22City%22=%22SOME%20PARK%22,&%22State%22=%22ZZ%22,&%22Zip%22=%2255555%E2%80%9D,&%E2%80%9DCrewOnsite%22=%22true%22&},&%22DigsiteInfo%22&{&%22WellKnownText%22=%22POLYGON((-81.13390268058475%2032.07206917625161,-81.14660562247929%2032.04064386441295,-81.08858407706913%2032.02259853170128,-81.05322183341679%2032.02434500961698,-81.05047525138554%2032.042681017283066,-81.0319358226746%2032.06537765335268,-81.01202310294804%2032.078469305179404,-81.02850259513554%2032.07963291684719,-81.07759774894413%2032.07090546831167,-81.12154306144413%2032.08806865844325,-81.13390268058475%2032.07206917625161))%E2%80%9D&}" for 127.0.0.1 at 2018-09-14 08:16:35 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"“JsonData”"=>"{", "\"RequestNumber\""=>"\"09252012-00001\",", "\"ReferenceRequestNumber\""=>"\"\",", "\"SequenceNumber\""=>"\"2421\",", "\"RequestType\""=>"\"Normal\",", "\"DateTimes\""=>nil, "{"=>nil, "\"RequestTakenDateTime\""=>"\"2011/07/02 23:09:38\",", "\"TransmissionDateTime\""=>"\"\",", "\"LegalDateTime\""=>"\"2011/07/08 07”,", "“RestakeDate\""=>"\"2011/07/21 00:00:00\",", "\"ExpirationDate\""=>"\"2011/07/26 00:00:00\",", "\"LPMeetingAcceptDueDate\""=>"\"\",", "\"OverheadBeginDate\""=>"\"\",", "\"OverheadEndDate\""=>"\"\"", "},"=>nil, "\"ServiceArea\""=>nil, "\"PrimaryServiceAreaCode\""=>nil, "\"SACode\""=>"[ \"ZZL01\", \"ZZL02\", \"ZZL03\"]", "\"AdditionalServiceAreaCodes\""=>nil, "}"=>nil, "\"Excavator\""=>nil, "\"CompanyName\""=>"\"John Doe CONSTRUCTION\",", "\"Address\""=>"\"555 Some RD\",", "\"City\""=>"\"SOME PARK\",", "\"State\""=>"\"ZZ\",", "\"Zip\""=>"\"55555”,", "”CrewOnsite\""=>"\"true\"", "\"DigsiteInfo\""=>nil, "\"WellKnownText\""=>"\"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))”"}
-Completed 204 No Content in 108249ms (ActiveRecord: 0.0ms)
-
-
-Started POST "/tickets?{&%22RequestNumber%22=%2209252012-00001%22,&%22ReferenceRequestNumber%22=%22%22,&%22SequenceNumber%22=%222421%22,&%22RequestType%22=%22Normal%22,&%22DateTimes%22&{&%22RequestTakenDateTime%22=%222011/07/02%2023:09:38%22,&%22TransmissionDateTime%22=%22%22,&%22LegalDateTime%22=%222011/07/08%2007%E2%80%9D,&%E2%80%9CRestakeDate%22=%222011/07/21%2000:00:00%22,&%22ExpirationDate%22=%222011/07/26%2000:00:00%22,&%22LPMeetingAcceptDueDate%22=%22%22,&%22OverheadBeginDate%22=%22%22,&%22OverheadEndDate%22=%22%22&},&%22ServiceArea%22&{&%22PrimaryServiceAreaCode%22&{&%22SACode%22=%22ZZGL103%22&},&%22AdditionalServiceAreaCodes%22&{&%22SACode%22=[%20%22ZZL01%22,%20%22ZZL02%22,%20%22ZZL03%22]&}&},&%22Excavator%22&{&%22CompanyName%22=%22John%20Doe%20CONSTRUCTION%22,&%22Address%22=%22555%20Some%20RD%22,&%22City%22=%22SOME%20PARK%22,&%22State%22=%22ZZ%22,&%22Zip%22=%2255555%E2%80%9D,&%E2%80%9DCrewOnsite%22=%22true%22&},&%22DigsiteInfo%22&{&%22WellKnownText%22=%22POLYGON((-81.13390268058475%2032.07206917625161,-81.14660562247929%2032.04064386441295,-81.08858407706913%2032.02259853170128,-81.05322183341679%2032.02434500961698,-81.05047525138554%2032.042681017283066,-81.0319358226746%2032.06537765335268,-81.01202310294804%2032.078469305179404,-81.02850259513554%2032.07963291684719,-81.07759774894413%2032.07090546831167,-81.12154306144413%2032.08806865844325,-81.13390268058475%2032.07206917625161))%E2%80%9D&}" for 127.0.0.1 at 2018-09-14 08:18:38 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"{"=>nil, "\"RequestNumber\""=>"\"09252012-00001\",", "\"ReferenceRequestNumber\""=>"\"\",", "\"SequenceNumber\""=>"\"2421\",", "\"RequestType\""=>"\"Normal\",", "\"DateTimes\""=>nil, "\"RequestTakenDateTime\""=>"\"2011/07/02 23:09:38\",", "\"TransmissionDateTime\""=>"\"\",", "\"LegalDateTime\""=>"\"2011/07/08 07”,", "“RestakeDate\""=>"\"2011/07/21 00:00:00\",", "\"ExpirationDate\""=>"\"2011/07/26 00:00:00\",", "\"LPMeetingAcceptDueDate\""=>"\"\",", "\"OverheadBeginDate\""=>"\"\",", "\"OverheadEndDate\""=>"\"\"", "},"=>nil, "\"ServiceArea\""=>nil, "\"PrimaryServiceAreaCode\""=>nil, "\"SACode\""=>"[ \"ZZL01\", \"ZZL02\", \"ZZL03\"]", "\"AdditionalServiceAreaCodes\""=>nil, "}"=>nil, "\"Excavator\""=>nil, "\"CompanyName\""=>"\"John Doe CONSTRUCTION\",", "\"Address\""=>"\"555 Some RD\",", "\"City\""=>"\"SOME PARK\",", "\"State\""=>"\"ZZ\",", "\"Zip\""=>"\"55555”,", "”CrewOnsite\""=>"\"true\"", "\"DigsiteInfo\""=>nil, "\"WellKnownText\""=>"\"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))”"}
-Completed 204 No Content in 184303ms (ActiveRecord: 0.0ms)
-
-
-Started POST "/tickets?{&%22RequestNumber%22=%2209252012-00001%22,&%22ReferenceRequestNumber%22=%22%22,&%22SequenceNumber%22=%222421%22,&%22RequestType%22=%22Normal%22,&%22DateTimes%22&{&%22RequestTakenDateTime%22=%222011/07/02%2023:09:38%22,&%22TransmissionDateTime%22=%22%22,&%22LegalDateTime%22=%222011/07/08%2007%E2%80%9D,&%E2%80%9CRestakeDate%22=%222011/07/21%2000:00:00%22,&%22ExpirationDate%22=%222011/07/26%2000:00:00%22,&%22LPMeetingAcceptDueDate%22=%22%22,&%22OverheadBeginDate%22=%22%22,&%22OverheadEndDate%22=%22%22&},&%22ServiceArea%22&{&%22PrimaryServiceAreaCode%22&{&%22SACode%22=%22ZZGL103%22&},&%22AdditionalServiceAreaCodes%22&{&%22SACode%22=[%20%22ZZL01%22,%20%22ZZL02%22,%20%22ZZL03%22]&}&},&%22Excavator%22&{&%22CompanyName%22=%22John%20Doe%20CONSTRUCTION%22,&%22Address%22=%22555%20Some%20RD%22,&%22City%22=%22SOME%20PARK%22,&%22State%22=%22ZZ%22,&%22Zip%22=%2255555%E2%80%9D,&%E2%80%9DCrewOnsite%22=%22true%22&},&%22DigsiteInfo%22&{&%22WellKnownText%22=%22POLYGON((-81.13390268058475%2032.07206917625161,-81.14660562247929%2032.04064386441295,-81.08858407706913%2032.02259853170128,-81.05322183341679%2032.02434500961698,-81.05047525138554%2032.042681017283066,-81.0319358226746%2032.06537765335268,-81.01202310294804%2032.078469305179404,-81.02850259513554%2032.07963291684719,-81.07759774894413%2032.07090546831167,-81.12154306144413%2032.08806865844325,-81.13390268058475%2032.07206917625161))%E2%80%9D&}" for 127.0.0.1 at 2018-09-14 08:21:46 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"{"=>nil, "\"RequestNumber\""=>"\"09252012-00001\",", "\"ReferenceRequestNumber\""=>"\"\",", "\"SequenceNumber\""=>"\"2421\",", "\"RequestType\""=>"\"Normal\",", "\"DateTimes\""=>nil, "\"RequestTakenDateTime\""=>"\"2011/07/02 23:09:38\",", "\"TransmissionDateTime\""=>"\"\",", "\"LegalDateTime\""=>"\"2011/07/08 07”,", "“RestakeDate\""=>"\"2011/07/21 00:00:00\",", "\"ExpirationDate\""=>"\"2011/07/26 00:00:00\",", "\"LPMeetingAcceptDueDate\""=>"\"\",", "\"OverheadBeginDate\""=>"\"\",", "\"OverheadEndDate\""=>"\"\"", "},"=>nil, "\"ServiceArea\""=>nil, "\"PrimaryServiceAreaCode\""=>nil, "\"SACode\""=>"[ \"ZZL01\", \"ZZL02\", \"ZZL03\"]", "\"AdditionalServiceAreaCodes\""=>nil, "}"=>nil, "\"Excavator\""=>nil, "\"CompanyName\""=>"\"John Doe CONSTRUCTION\",", "\"Address\""=>"\"555 Some RD\",", "\"City\""=>"\"SOME PARK\",", "\"State\""=>"\"ZZ\",", "\"Zip\""=>"\"55555”,", "”CrewOnsite\""=>"\"true\"", "\"DigsiteInfo\""=>nil, "\"WellKnownText\""=>"\"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))”", "ticket"=>{}}
-Completed 204 No Content in 324648ms (ActiveRecord: 29.9ms)
-
-
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 08:27:15 +0530
-Error occurred while parsing request parameters.
-Contents:
-
-{ 
-    "RequestNumber": "09252012-00001",
-    "ReferenceRequestNumber": "",
-    "SequenceNumber": "2421", 
-    "RequestType": "Normal",  
-    "DateTimes": 
-                {  
-                    "RequestTakenDateTime": "2011/07/02 23:09:38", 
-                    "TransmissionDateTime": "", 
-                    "LegalDateTime": "2011/07/08 07”,
-                    “RestakeDate": "2011/07/21 00:00:00", 
-                    "ExpirationDate": "2011/07/26 00:00:00", 
-                    "LPMeetingAcceptDueDate": "", 
-                    "OverheadBeginDate": "", 
-                    "OverheadEndDate": "" 
-                 },
-   "ServiceArea": 
-             { 
-                  "PrimaryServiceAreaCode": 
-                        { 
-                               "SACode": "ZZGL103" 
-                         },
-                  "AdditionalServiceAreaCodes": 
-                    { 
-                               "SACode": [ "ZZL01", "ZZL02", "ZZL03"]
-                    }
-              }, 
-   "Excavator": 
-            {
-                   "CompanyName": "John Doe CONSTRUCTION", 
-                   "Address": "555 Some RD", 
-                   "City": "SOME PARK", 
-                   "State": "ZZ", 
-                   "Zip": "55555”,
-                   ”CrewOnsite": "true" 
-             }, 
-  "DigsiteInfo": 
-               { 
-                    "WellKnownText": "POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))”
-}
   
-ActionDispatch::Http::Parameters::ParseError (765: unexpected token at '{ 
-    "RequestNumber": "09252012-00001",
-    "ReferenceRequestNumber": "",
-    "SequenceNumber": "2421", 
-    "RequestType": "Normal",  
-    "DateTimes": 
-                {  
-                    "RequestTakenDateTime": "2011/07/02 23:09:38", 
-                    "TransmissionDateTime": "", 
-                    "LegalDateTime": "2011/07/08 07”,
-                    “RestakeDate": "2011/07/21 00:00:00", 
-                    "ExpirationDate": "2011/07/26 00:00:00", 
-                    "LPMeetingAcceptDueDate": "", 
-                    "OverheadBeginDate": "", 
-                    "OverheadEndDate": "" 
-                 },
-   "ServiceArea": 
-             { 
-                  "PrimaryServiceAreaCode": 
-                        { 
-                               "SACode": "ZZGL103" 
-                         },
-                  "AdditionalServiceAreaCodes": 
-                    { 
-                               "SACode": [ "ZZL01", "ZZL02", "ZZL03"]
-                    }
-              }, 
-   "Excavator": 
-            {
-                   "CompanyName": "John Doe CONSTRUCTION", 
-                   "Address": "555 Some RD", 
-                   "City": "SOME PARK", 
-                   "State": "ZZ", 
-                   "Zip": "55555”,
-                   ”CrewOnsite": "true" 
-             }, 
-  "DigsiteInfo": 
-               { 
-                    "WellKnownText": "POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))”
-}'):
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
   
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
-actionpack (5.2.1) lib/action_dispatch/http/request.rb:381:in `block in POST'
-rack (2.0.5) lib/rack/request.rb:57:in `fetch'
-rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
-actionpack (5.2.1) lib/action_dispatch/http/request.rb:380:in `POST'
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:55:in `parameters'
-actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
-actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
-activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
-actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
-actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
-actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
-rack (2.0.5) lib/rack/etag.rb:25:in `call'
-rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
-rack (2.0.5) lib/rack/head.rb:12:in `call'
-activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
 activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
 actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
 railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
 railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
@@ -244,8 +142,10 @@ activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagge
 activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
 activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
 railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
 rack (2.0.5) lib/rack/runtime.rb:22:in `call'
 activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
@@ -257,105 +157,75 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 08:28:52 +0530
-Error occurred while parsing request parameters.
-Contents:
+Started GET "/" for ::1 at 2018-09-14 10:45:42 +0530
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (4.8ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:11
+  Rendered tickets/index.erb within layouts/application (35.4ms)
+Completed 200 OK in 281ms (Views: 252.9ms | ActiveRecord: 13.0ms)
 
-{ 
-    "RequestNumber": "09252012-00001",
-    "ReferenceRequestNumber": "",
-    "SequenceNumber": "2421", 
-    "RequestType": "Normal",  
-    "DateTimes": 
-                {  
-                    "RequestTakenDateTime": "2011/07/02 23:09:38", 
-                    "TransmissionDateTime": "", 
-                    "LegalDateTime": "2011/07/08 07”,
-                    “RestakeDate": "2011/07/21 00:00:00", 
-                    "ExpirationDate": "2011/07/26 00:00:00", 
-                    "LPMeetingAcceptDueDate": "", 
-                    "OverheadBeginDate": "", 
-                    "OverheadEndDate": "" 
-                 },
-   "ServiceArea": 
-             { 
-                  "PrimaryServiceAreaCode": 
-                        { 
-                               "SACode": "ZZGL103" 
-                         },
-                  "AdditionalServiceAreaCodes": 
-                    { 
-                               "SACode": [ "ZZL01", "ZZL02", "ZZL03"]
-                    }
-              }, 
-   "Excavator": 
-            {
-                   "CompanyName": "John Doe CONSTRUCTION", 
-                   "Address": "555 Some RD", 
-                   "City": "SOME PARK", 
-                   "State": "ZZ", 
-                   "Zip": "55555”,
-                   ”CrewOnsite": "true" 
-             }, 
-  "DigsiteInfo": 
-               { 
-                    "WellKnownText": "POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))”
-}
-}
+
+Started GET "/" for ::1 at 2018-09-14 10:47:51 +0530
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:11
+  Rendered tickets/index.erb within layouts/application (3.3ms)
+Completed 200 OK in 43ms (Views: 36.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2018-09-14 10:48:45 +0530
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (2.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:12
+  Rendered tickets/index.erb within layouts/application (6.8ms)
+Completed 200 OK in 36ms (Views: 29.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2018-09-14 10:50:59 +0530
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:13
+  Rendered tickets/index.erb within layouts/application (5.0ms)
+Completed 200 OK in 34ms (Views: 27.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tickets/1" for ::1 at 2018-09-14 10:51:27 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 128ms (ActiveRecord: 0.0ms)
+
+
   
-ActionDispatch::Http::Parameters::ParseError (765: unexpected token at '{ 
-    "RequestNumber": "09252012-00001",
-    "ReferenceRequestNumber": "",
-    "SequenceNumber": "2421", 
-    "RequestType": "Normal",  
-    "DateTimes": 
-                {  
-                    "RequestTakenDateTime": "2011/07/02 23:09:38", 
-                    "TransmissionDateTime": "", 
-                    "LegalDateTime": "2011/07/08 07”,
-                    “RestakeDate": "2011/07/21 00:00:00", 
-                    "ExpirationDate": "2011/07/26 00:00:00", 
-                    "LPMeetingAcceptDueDate": "", 
-                    "OverheadBeginDate": "", 
-                    "OverheadEndDate": "" 
-                 },
-   "ServiceArea": 
-             { 
-                  "PrimaryServiceAreaCode": 
-                        { 
-                               "SACode": "ZZGL103" 
-                         },
-                  "AdditionalServiceAreaCodes": 
-                    { 
-                               "SACode": [ "ZZL01", "ZZL02", "ZZL03"]
-                    }
-              }, 
-   "Excavator": 
-            {
-                   "CompanyName": "John Doe CONSTRUCTION", 
-                   "Address": "555 Some RD", 
-                   "City": "SOME PARK", 
-                   "State": "ZZ", 
-                   "Zip": "55555”,
-                   ”CrewOnsite": "true" 
-             }, 
-  "DigsiteInfo": 
-               { 
-                    "WellKnownText": "POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))”
-}
-}'):
+ActionController::UnknownFormat (TicketsController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
   
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
-actionpack (5.2.1) lib/action_dispatch/http/request.rb:381:in `block in POST'
-rack (2.0.5) lib/rack/request.rb:57:in `fetch'
-rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
-actionpack (5.2.1) lib/action_dispatch/http/request.rb:380:in `POST'
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:55:in `parameters'
-actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
-actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
 activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
 actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
 actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
 actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
 actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
@@ -364,15 +234,24 @@ actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
 actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
 actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
 actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
 rack (2.0.5) lib/rack/etag.rb:25:in `call'
-rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
 rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
 activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
 activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
 actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
 railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
 railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
@@ -380,8 +259,10 @@ activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagge
 activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
 activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
 railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
 rack (2.0.5) lib/rack/runtime.rb:22:in `call'
 activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
@@ -393,1026 +274,300 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 08:35:00 +0530
-Error occurred while parsing request parameters.
-Contents:
-
-{ 
-    "RequestNumber": "09252012-00001",
-    "ReferenceRequestNumber": "",
-    "SequenceNumber": "2421", 
-    "RequestType": "Normal",  
-    "ServiceArea": 
-        { 
-            "PrimaryServiceAreaCode": 
-               { 
-                   "SACode": "ZZGL103" 
-               },
-            "AdditionalServiceAreaCodes": 
-               { 
-                   "SACode": [ "ZZL01", "ZZL02", "ZZL03"]
-               }
-        }, 
-   "Excavator": 
-            {
-                   "CompanyName": "John Doe CONSTRUCTION", 
-                   "Address": "555 Some RD", 
-                   "City": "SOME PARK", 
-                   "State": "ZZ", 
-                   "Zip": "55555”
-             }, 
-  "DigsiteInfo": 
-               { 
-                    "WellKnownText": "POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))”
-}
-
-  
-ActionDispatch::Http::Parameters::ParseError (765: unexpected token at '{ 
-    "RequestNumber": "09252012-00001",
-    "ReferenceRequestNumber": "",
-    "SequenceNumber": "2421", 
-    "RequestType": "Normal",  
-    "ServiceArea": 
-        { 
-            "PrimaryServiceAreaCode": 
-               { 
-                   "SACode": "ZZGL103" 
-               },
-            "AdditionalServiceAreaCodes": 
-               { 
-                   "SACode": [ "ZZL01", "ZZL02", "ZZL03"]
-               }
-        }, 
-   "Excavator": 
-            {
-                   "CompanyName": "John Doe CONSTRUCTION", 
-                   "Address": "555 Some RD", 
-                   "City": "SOME PARK", 
-                   "State": "ZZ", 
-                   "Zip": "55555”
-             }, 
-  "DigsiteInfo": 
-               { 
-                    "WellKnownText": "POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))”
-}
-'):
-  
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
-actionpack (5.2.1) lib/action_dispatch/http/request.rb:381:in `block in POST'
-rack (2.0.5) lib/rack/request.rb:57:in `fetch'
-rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
-actionpack (5.2.1) lib/action_dispatch/http/request.rb:380:in `POST'
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:55:in `parameters'
-actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
-actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
-activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
-actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
-actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
-actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
-rack (2.0.5) lib/rack/etag.rb:25:in `call'
-rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
-rack (2.0.5) lib/rack/head.rb:12:in `call'
-activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.0.5) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
-railties (5.2.1) lib/rails/engine.rb:524:in `call'
-puma (3.12.0) lib/puma/configuration.rb:225:in `call'
-puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
-puma (3.12.0) lib/puma/server.rb:472:in `process_client'
-puma (3.12.0) lib/puma/server.rb:332:in `block in run'
-puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 08:48:20 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"RequestNumber"=>"09252012-00001", "ReferenceRequestNumber"=>"", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "Excavator"=>{"CompanyName"=>"John Doe CONSTRUCTION", "Address"=>"555 Some RD", "City"=>"SOME PARK", "State"=>"ZZ", "Zip"=>"3333", "CrewOnsite"=>"true"}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}, "ticket"=>{"RequestNumber"=>"09252012-00001", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}}}
-Completed 204 No Content in 0ms (ActiveRecord: 5.3ms)
+Started GET "/tickets/1" for ::1 at 2018-09-14 10:52:10 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  Rendered tickets/show.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 28.0ms | ActiveRecord: 0.0ms)
 
 
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 08:48:38 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"RequestNumber"=>"09252012-00001", "ReferenceRequestNumber"=>"", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "Excavator"=>{"CompanyName"=>"John Doe CONSTRUCTION", "Address"=>"555 Some RD", "City"=>"SOME PARK", "State"=>"ZZ", "Zip"=>"3333", "CrewOnsite"=>"true"}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}, "ticket"=>{"RequestNumber"=>"09252012-00001", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}}}
-Completed 204 No Content in 116805ms (ActiveRecord: 2.3ms)
+Started GET "/tickets/1" for ::1 at 2018-09-14 10:52:14 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  Rendered tickets/show.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 28.9ms | ActiveRecord: 0.0ms)
 
 
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 08:50:38 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"tickets"=>{"RequestNumber"=>"09252012-00001", "ReferenceRequestNumber"=>"", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "Excavator"=>{"CompanyName"=>"John Doe CONSTRUCTION", "Address"=>"555 Some RD", "City"=>"SOME PARK", "State"=>"ZZ", "Zip"=>"3333", "CrewOnsite"=>"true"}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}}, "ticket"=>{}}
-Completed 204 No Content in 119255ms (ActiveRecord: 0.0ms)
+Started GET "/tickets/1" for ::1 at 2018-09-14 10:59:13 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.6ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 1]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (2.7ms)
+Completed 200 OK in 38ms (Views: 21.6ms | ActiveRecord: 5.2ms)
 
 
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 09:10:50 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"RequestNumber"=>"09252012-00001", "ReferenceRequestNumber"=>"", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "Excavator"=>{"CompanyName"=>"John Doe CONSTRUCTION", "Address"=>"555 Some RD", "City"=>"SOME PARK", "State"=>"ZZ", "Zip"=>"3333", "CrewOnsite"=>"true"}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}, "ticket"=>{"RequestNumber"=>"09252012-00001", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}}}
-Completed 400 Bad Request in 1ms (ActiveRecord: 20.6ms)
+Started GET "/tickets/1" for ::1 at 2018-09-14 10:59:18 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.4ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 1]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (1.7ms)
+Completed 200 OK in 30ms (Views: 25.1ms | ActiveRecord: 0.4ms)
 
 
-  
-ActionController::ParameterMissing (param is missing or the value is empty: tickets):
-  
-app/controllers/tickets_controller.rb:11:in `tickets_params'
-app/controllers/tickets_controller.rb:3:in `create'
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 09:11:56 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"RequestNumber"=>"09252012-00001", "ReferenceRequestNumber"=>"", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "Excavator"=>{"CompanyName"=>"John Doe CONSTRUCTION", "Address"=>"555 Some RD", "City"=>"SOME PARK", "State"=>"ZZ", "Zip"=>"3333", "CrewOnsite"=>"true"}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}, "ticket"=>{"RequestNumber"=>"09252012-00001", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}}}
-Unpermitted parameter: :SACode
-Unpermitted parameters: :ReferenceRequestNumber, :Excavator, :ticket
-  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/tickets_controller.rb:3
-  [1m[36mTicket Create (10.1ms)[0m  [1m[32mINSERT INTO "tickets" ("RequestNumber", "SequenceNumber", "RequestType", "DateTimes", "ServiceArea", "DigsiteInfo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["RequestNumber", 9252012], ["SequenceNumber", 2421], ["RequestType", "Normal"], ["DateTimes", "\"ResponseDueDateTime\"=>\"2011/07/13 23:59:59\""], ["ServiceArea", "\"PrimaryServiceAreaCode\"=>\"{\\\"SACode\\\"=>\\\"ZZGL103\\\"}\", \"AdditionalServiceAreaCodes\"=>\"{}\""], ["DigsiteInfo", "\"WellKnownText\"=>\"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))\""], ["created_at", "2018-09-14 03:41:56.557363"], ["updated_at", "2018-09-14 03:41:56.557363"]]
-  ↳ app/controllers/tickets_controller.rb:3
-  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/tickets_controller.rb:3
-Completed 204 No Content in 378745ms (ActiveRecord: 34.0ms)
+Started GET "/tickets/1" for ::1 at 2018-09-14 10:59:25 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.4ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 1]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (1.8ms)
+Completed 200 OK in 32ms (Views: 26.7ms | ActiveRecord: 0.4ms)
 
 
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 09:22:48 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"RequestNumber"=>"09252012-00001", "ReferenceRequestNumber"=>"", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "Excavator"=>{"CompanyName"=>"John Doe CONSTRUCTION", "Address"=>"555 Some RD", "City"=>"SOME PARK", "State"=>"ZZ", "Zip"=>"3333", "CrewOnsite"=>"true"}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}, "ticket"=>{"RequestNumber"=>"09252012-00001", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}}}
-Unpermitted parameter: :SACode
-Unpermitted parameters: :ReferenceRequestNumber, :Excavator, :ticket
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/tickets_controller.rb:3
-  [1m[36mTicket Create (0.5ms)[0m  [1m[32mINSERT INTO "tickets" ("RequestNumber", "SequenceNumber", "RequestType", "DateTimes", "ServiceArea", "DigsiteInfo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["RequestNumber", 9252012], ["SequenceNumber", 2421], ["RequestType", "Normal"], ["DateTimes", "\"ResponseDueDateTime\"=>\"2011/07/13 23:59:59\""], ["ServiceArea", "\"PrimaryServiceAreaCode\"=>\"{\\\"SACode\\\"=>\\\"ZZGL103\\\"}\", \"AdditionalServiceAreaCodes\"=>\"{}\""], ["DigsiteInfo", "\"WellKnownText\"=>\"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))\""], ["created_at", "2018-09-14 03:52:48.676146"], ["updated_at", "2018-09-14 03:52:48.676146"]]
-  ↳ app/controllers/tickets_controller.rb:3
-  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/tickets_controller.rb:3
-Unpermitted parameters: :City, :State, :Zip
-Unpermitted parameters: :RequestNumber, :ReferenceRequestNumber, :SequenceNumber, :RequestType, :DateTimes, :ServiceArea, :DigsiteInfo, :ticket
-  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/tickets_controller.rb:4
-  [1m[36mExcavator Create (19.6ms)[0m  [1m[32mINSERT INTO "excavators" ("Excavator", "ticket_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["Excavator", "\"CompanyName\"=>\"John Doe CONSTRUCTION\", \"Address\"=>\"555 Some RD\", \"CrewOnsite\"=>\"true\""], ["ticket_id", 2], ["created_at", "2018-09-14 03:52:48.726906"], ["updated_at", "2018-09-14 03:52:48.726906"]]
-  ↳ app/controllers/tickets_controller.rb:4
-  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/tickets_controller.rb:4
-Completed 200 OK in 92ms (Views: 0.2ms | ActiveRecord: 36.4ms)
+Started GET "/tickets/1" for ::1 at 2018-09-14 10:59:29 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.4ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 1]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 26.7ms | ActiveRecord: 0.4ms)
 
 
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 09:25:10 +0530
-Error occurred while parsing request parameters.
-Contents:
-
-{
-"ContactCenter": "UPCA", "RequestNumber": "09252012-00001", "ReferenceRequestNumber": "", "VersionNumber": "0", "SequenceNumber": "2421", "RequestType": "Normal", "RequestAction": "Restake", "DateTimes": {
-"RequestTakenDateTime": "2011/07/02 23:09:38", "TransmissionDateTime": "",
-"LegalDateTime": "2011/07/08 07:00:00", "ResponseDueDateTime": "2011/07/13 23:59:59",
- "RestakeDate": "2011/07/21 00:00:00", "ExpirationDate": "2011/07/26 00:00:00", "LPMeetingAcceptDueDate": "", "OverheadBeginDate": "", "OverheadEndDate": ""
-}, "ServiceArea": {
-"PrimaryServiceAreaCode": { "SACode": "ZZGL103"
-}, "AdditionalServiceAreaCodes": {
-"SACode": [ "ZZL01", "ZZL02", "ZZL03"
-] }
-}, "Excavator": {
-"CompanyName": "John Doe CONSTRUCTION", "Address": "555 Some RD",
-"City": "SOME PARK",
-"State": "ZZ",
-"Zip": "55555", "Type": "Excavator", "Contact": {
-"Name": "Johnny Doe",
-"Phone": "1115552345",
-"Email": "example@example.com"
-}, "FieldContact": {
-"Name": "Field Contact",
-"Phone": "1235557924",
-"Email": "example@example.com"
-},
-"CrewOnsite": "true" },
-"ExcavationInfo": {
-"TypeOfWork": "rpr man hole tops", "WorkDoneFor": "gpc",
-"ProjectDuration": "60 days", "ProjectStartDate": "2011/07/08 07:00:00", "Explosives": "No",
-
- "UndergroundOverhead": "Underground",
-"HorizontalBoring": "Road, Driveway, and Sidewalk",
-"Whitelined": "No",
-"LocateInstructions": "locate along the r/o/w on both sides of the rd - including the rd itself -
-from inter to inter ",
-"Remarks": "Previous Request Number:05161-120-011\n\n\t\t\tPrevious Request
-Number:06044-254-020\n\n\t\t\tPrevious Request Number:06171-300-030", "DigsiteInfo": {
-"LookupBy": "MANUAL", "LocationType": "Multiple Address", "Subdivision": "",
-"AddressInfo": {
-"State": "ST", "County": "COUNTY", "Place": "PLACE", "Zip": "",
-"Address": {
-"AddressNum": [ "Address 1", "Address 2"
-] },
-"Street": {
-"Prefix": "", "Name": "Trinity", "Type": "Ave", "Suffix": "SW"
-} },
-"NearStreet": {
-"State": "XX",
-"County": "SomeCounty", "Place": "City",
-"Prefix": "",
-"Name": "",
-"Type": "",
-"Suffix": ""
-}, "Intersection": {
-"ItoI": [{
-"State": "XX",
-"County": "FULERTON", "Place": "NORCROSS",
-
-"Prefix": "", "Name": "London", "Type": "St", "Suffix": "SW"
-}, {
-"State": "ZZ", "County": "COUNTY", "Place": "ATLANTA", "Prefix": "",
-"Name": "Jefferson", "Type": "Ave", "Suffix": "SW"
-} ]
-},
-"WellKnownText": "POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"
-} }
-}
-  
-ActionDispatch::Http::Parameters::ParseError (765: unexpected token at '{
-"ContactCenter": "UPCA", "RequestNumber": "09252012-00001", "ReferenceRequestNumber": "", "VersionNumber": "0", "SequenceNumber": "2421", "RequestType": "Normal", "RequestAction": "Restake", "DateTimes": {
-"RequestTakenDateTime": "2011/07/02 23:09:38", "TransmissionDateTime": "",
-"LegalDateTime": "2011/07/08 07:00:00", "ResponseDueDateTime": "2011/07/13 23:59:59",
- "RestakeDate": "2011/07/21 00:00:00", "ExpirationDate": "2011/07/26 00:00:00", "LPMeetingAcceptDueDate": "", "OverheadBeginDate": "", "OverheadEndDate": ""
-}, "ServiceArea": {
-"PrimaryServiceAreaCode": { "SACode": "ZZGL103"
-}, "AdditionalServiceAreaCodes": {
-"SACode": [ "ZZL01", "ZZL02", "ZZL03"
-] }
-}, "Excavator": {
-"CompanyName": "John Doe CONSTRUCTION", "Address": "555 Some RD",
-"City": "SOME PARK",
-"State": "ZZ",
-"Zip": "55555", "Type": "Excavator", "Contact": {
-"Name": "Johnny Doe",
-"Phone": "1115552345",
-"Email": "example@example.com"
-}, "FieldContact": {
-"Name": "Field Contact",
-"Phone": "1235557924",
-"Email": "example@example.com"
-},
-"CrewOnsite": "true" },
-"ExcavationInfo": {
-"TypeOfWork": "rpr man hole tops", "WorkDoneFor": "gpc",
-"ProjectDuration": "60 days", "ProjectStartDate": "2011/07/08 07:00:00", "Explosives": "No",
-
- "UndergroundOverhead": "Underground",
-"HorizontalBoring": "Road, Driveway, and Sidewalk",
-"Whitelined": "No",
-"LocateInstructions": "locate along the r/o/w on both sides of the rd - including the rd itself -
-from inter to inter ",
-"Remarks": "Previous Request Number:05161-120-011\n\n\t\t\tPrevious Request
-Number:06044-254-020\n\n\t\t\tPrevious Request Number:06171-300-030", "DigsiteInfo": {
-"LookupBy": "MANUAL", "LocationType": "Multiple Address", "Subdivision": "",
-"AddressInfo": {
-"State": "ST", "County": "COUNTY", "Place": "PLACE", "Zip": "",
-"Address": {
-"AddressNum": [ "Address 1", "Address 2"
-] },
-"Street": {
-"Prefix": "", "Name": "Trinity", "Type": "Ave", "Suffix": "SW"
-} },
-"NearStreet": {
-"State": "XX",
-"County": "SomeCounty", "Place": "City",
-"Prefix": "",
-"Name": "",
-"Type": "",
-"Suffix": ""
-}, "Intersection": {
-"ItoI": [{
-"State": "XX",
-"County": "FULERTON", "Place": "NORCROSS",
-
-"Prefix": "", "Name": "London", "Type": "St", "Suffix": "SW"
-}, {
-"State": "ZZ", "County": "COUNTY", "Place": "ATLANTA", "Prefix": "",
-"Name": "Jefferson", "Type": "Ave", "Suffix": "SW"
-} ]
-},
-"WellKnownText": "POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"
-} }
-}'):
-  
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
-actionpack (5.2.1) lib/action_dispatch/http/request.rb:381:in `block in POST'
-rack (2.0.5) lib/rack/request.rb:57:in `fetch'
-rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
-actionpack (5.2.1) lib/action_dispatch/http/request.rb:380:in `POST'
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:55:in `parameters'
-actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
-actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
-activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
-actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
-actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
-actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
-rack (2.0.5) lib/rack/etag.rb:25:in `call'
-rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
-rack (2.0.5) lib/rack/head.rb:12:in `call'
-activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.0.5) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
-railties (5.2.1) lib/rails/engine.rb:524:in `call'
-puma (3.12.0) lib/puma/configuration.rb:225:in `call'
-puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
-puma (3.12.0) lib/puma/server.rb:472:in `process_client'
-puma (3.12.0) lib/puma/server.rb:332:in `block in run'
-puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 09:27:57 +0530
-Error occurred while parsing request parameters.
-Contents:
-
-{
-"ContactCenter": "UPCA", "RequestNumber": "09252012-00001", "ReferenceRequestNumber": "", "VersionNumber": "0", "SequenceNumber": "2421", "RequestType": "Normal", "RequestAction": "Restake", "DateTimes": {
-"RequestTakenDateTime": "2011/07/02 23:09:38", "TransmissionDateTime": "",
-"LegalDateTime": "2011/07/08 07:00:00", "ResponseDueDateTime": "2011/07/13 23:59:59",
- "RestakeDate": "2011/07/21 00:00:00", "ExpirationDate": "2011/07/26 00:00:00", "LPMeetingAcceptDueDate": "", "OverheadBeginDate": "", "OverheadEndDate": ""
-}, "ServiceArea": {
-"PrimaryServiceAreaCode": { "SACode": "ZZGL103"
-}, "AdditionalServiceAreaCodes": {
-"SACode": [ "ZZL01", "ZZL02", "ZZL03"
-] }
-}, "Excavator": {
-"CompanyName": "John Doe CONSTRUCTION", "Address": "555 Some RD",
-"City": "SOME PARK",
-"State": "ZZ",
-"Zip": "55555", "Type": "Excavator", "Contact": {
-"Name": "Johnny Doe",
-"Phone": "1115552345",
-"Email": "example@example.com"
-}, "FieldContact": {
-"Name": "Field Contact",
-"Phone": "1235557924",
-"Email": "example@example.com"
-},
-"CrewOnsite": "true" },
-"ExcavationInfo": {
-"TypeOfWork": "rpr man hole tops", "WorkDoneFor": "gpc",
-"ProjectDuration": "60 days", "ProjectStartDate": "2011/07/08 07:00:00", "Explosives": "No",
-
- "UndergroundOverhead": "Underground",
-"HorizontalBoring": "Road, Driveway, and Sidewalk",
-"Whitelined": "No",
-"LocateInstructions": "locate along the r/o/w on both sides of the rd - including the rd itself -
-from inter to inter ",
-"Remarks": "Previous Request Number:05161-120-011\n\n\t\t\tPrevious Request
-Number:06044-254-020\n\n\t\t\tPrevious Request Number:06171-300-030", "DigsiteInfo": {
-"LookupBy": "MANUAL", "LocationType": "Multiple Address", "Subdivision": "",
-"AddressInfo": {
-"State": "ST", "County": "COUNTY", "Place": "PLACE", "Zip": "",
-"Address": {
-"AddressNum": [ "Address 1", "Address 2"
-] },
-"Street": {
-"Prefix": "", "Name": "Trinity", "Type": "Ave", "Suffix": "SW"
-} },
-"NearStreet": {
-"State": "XX",
-"County": "SomeCounty", "Place": "City",
-"Prefix": "",
-"Name": "",
-"Type": "",
-"Suffix": ""
-}, "Intersection": {
-"ItoI": [{
-"State": "XX",
-"County": "FULERTON", "Place": "NORCROSS",
-
-"Prefix": "", "Name": "London", "Type": "St", "Suffix": "SW"
-}, {
-"State": "ZZ", "County": "COUNTY", "Place": "ATLANTA", "Prefix": "",
-"Name": "Jefferson", "Type": "Ave", "Suffix": "SW"
-} ]
-},
-"WellKnownText": "POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"
-} }
-}
-  
-ActionDispatch::Http::Parameters::ParseError (765: unexpected token at '{
-"ContactCenter": "UPCA", "RequestNumber": "09252012-00001", "ReferenceRequestNumber": "", "VersionNumber": "0", "SequenceNumber": "2421", "RequestType": "Normal", "RequestAction": "Restake", "DateTimes": {
-"RequestTakenDateTime": "2011/07/02 23:09:38", "TransmissionDateTime": "",
-"LegalDateTime": "2011/07/08 07:00:00", "ResponseDueDateTime": "2011/07/13 23:59:59",
- "RestakeDate": "2011/07/21 00:00:00", "ExpirationDate": "2011/07/26 00:00:00", "LPMeetingAcceptDueDate": "", "OverheadBeginDate": "", "OverheadEndDate": ""
-}, "ServiceArea": {
-"PrimaryServiceAreaCode": { "SACode": "ZZGL103"
-}, "AdditionalServiceAreaCodes": {
-"SACode": [ "ZZL01", "ZZL02", "ZZL03"
-] }
-}, "Excavator": {
-"CompanyName": "John Doe CONSTRUCTION", "Address": "555 Some RD",
-"City": "SOME PARK",
-"State": "ZZ",
-"Zip": "55555", "Type": "Excavator", "Contact": {
-"Name": "Johnny Doe",
-"Phone": "1115552345",
-"Email": "example@example.com"
-}, "FieldContact": {
-"Name": "Field Contact",
-"Phone": "1235557924",
-"Email": "example@example.com"
-},
-"CrewOnsite": "true" },
-"ExcavationInfo": {
-"TypeOfWork": "rpr man hole tops", "WorkDoneFor": "gpc",
-"ProjectDuration": "60 days", "ProjectStartDate": "2011/07/08 07:00:00", "Explosives": "No",
-
- "UndergroundOverhead": "Underground",
-"HorizontalBoring": "Road, Driveway, and Sidewalk",
-"Whitelined": "No",
-"LocateInstructions": "locate along the r/o/w on both sides of the rd - including the rd itself -
-from inter to inter ",
-"Remarks": "Previous Request Number:05161-120-011\n\n\t\t\tPrevious Request
-Number:06044-254-020\n\n\t\t\tPrevious Request Number:06171-300-030", "DigsiteInfo": {
-"LookupBy": "MANUAL", "LocationType": "Multiple Address", "Subdivision": "",
-"AddressInfo": {
-"State": "ST", "County": "COUNTY", "Place": "PLACE", "Zip": "",
-"Address": {
-"AddressNum": [ "Address 1", "Address 2"
-] },
-"Street": {
-"Prefix": "", "Name": "Trinity", "Type": "Ave", "Suffix": "SW"
-} },
-"NearStreet": {
-"State": "XX",
-"County": "SomeCounty", "Place": "City",
-"Prefix": "",
-"Name": "",
-"Type": "",
-"Suffix": ""
-}, "Intersection": {
-"ItoI": [{
-"State": "XX",
-"County": "FULERTON", "Place": "NORCROSS",
-
-"Prefix": "", "Name": "London", "Type": "St", "Suffix": "SW"
-}, {
-"State": "ZZ", "County": "COUNTY", "Place": "ATLANTA", "Prefix": "",
-"Name": "Jefferson", "Type": "Ave", "Suffix": "SW"
-} ]
-},
-"WellKnownText": "POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"
-} }
-}'):
-  
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
-actionpack (5.2.1) lib/action_dispatch/http/request.rb:381:in `block in POST'
-rack (2.0.5) lib/rack/request.rb:57:in `fetch'
-rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
-actionpack (5.2.1) lib/action_dispatch/http/request.rb:380:in `POST'
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:55:in `parameters'
-actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
-actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
-activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
-actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
-actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
-actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
-rack (2.0.5) lib/rack/etag.rb:25:in `call'
-rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
-rack (2.0.5) lib/rack/head.rb:12:in `call'
-activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.0.5) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
-railties (5.2.1) lib/rails/engine.rb:524:in `call'
-puma (3.12.0) lib/puma/configuration.rb:225:in `call'
-puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
-puma (3.12.0) lib/puma/server.rb:472:in `process_client'
-puma (3.12.0) lib/puma/server.rb:332:in `block in run'
-puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 09:28:53 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"RequestNumber"=>"09252012-00001", "ReferenceRequestNumber"=>"", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "Excavator"=>{"CompanyName"=>"John Doe CONSTRUCTION", "Address"=>"555 Some RD", "City"=>"SOME PARK", "State"=>"ZZ", "Zip"=>"3333", "CrewOnsite"=>"true"}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}, "ticket"=>{"RequestNumber"=>"09252012-00001", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}}}
-Unpermitted parameter: :SACode
-Unpermitted parameters: :ReferenceRequestNumber, :Excavator, :ticket
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/tickets_controller.rb:4
-  [1m[36mTicket Create (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("RequestNumber", "SequenceNumber", "RequestType", "DateTimes", "ServiceArea", "DigsiteInfo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["RequestNumber", 9252012], ["SequenceNumber", 2421], ["RequestType", "Normal"], ["DateTimes", "\"ResponseDueDateTime\"=>\"2011/07/13 23:59:59\""], ["ServiceArea", "\"PrimaryServiceAreaCode\"=>\"{\\\"SACode\\\"=>\\\"ZZGL103\\\"}\", \"AdditionalServiceAreaCodes\"=>\"{}\""], ["DigsiteInfo", "\"WellKnownText\"=>\"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))\""], ["created_at", "2018-09-14 03:59:18.248046"], ["updated_at", "2018-09-14 03:59:18.248046"]]
-  ↳ app/controllers/tickets_controller.rb:4
-  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/tickets_controller.rb:4
-Unpermitted parameters: :City, :State, :Zip
-Unpermitted parameters: :RequestNumber, :ReferenceRequestNumber, :SequenceNumber, :RequestType, :DateTimes, :ServiceArea, :DigsiteInfo, :ticket
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/tickets_controller.rb:5
-  [1m[36mExcavator Create (0.4ms)[0m  [1m[32mINSERT INTO "excavators" ("Excavator", "ticket_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["Excavator", "\"CompanyName\"=>\"John Doe CONSTRUCTION\", \"Address\"=>\"555 Some RD\", \"CrewOnsite\"=>\"true\""], ["ticket_id", 3], ["created_at", "2018-09-14 03:59:18.273496"], ["updated_at", "2018-09-14 03:59:18.273496"]]
-  ↳ app/controllers/tickets_controller.rb:5
-  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/tickets_controller.rb:5
-Completed 200 OK in 24336ms (Views: 0.1ms | ActiveRecord: 11.7ms)
+Started GET "/tickets/1" for ::1 at 2018-09-14 10:59:30 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.5ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 1]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (2.3ms)
+Completed 200 OK in 38ms (Views: 32.3ms | ActiveRecord: 0.5ms)
 
 
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 09:32:09 +0530
-Error occurred while parsing request parameters.
-Contents:
-
-{
-"ContactCenter": "UPCA", "RequestNumber": "09252012-00001", "ReferenceRequestNumber": "", "VersionNumber": "0", "SequenceNumber": "2421", "RequestType": "Normal", "RequestAction": "Restake", "DateTimes": {
-"RequestTakenDateTime": "2011/07/02 23:09:38", "TransmissionDateTime": "",
-"LegalDateTime": "2011/07/08 07:00:00", "ResponseDueDateTime": "2011/07/13 23:59:59",
- "RestakeDate": "2011/07/21 00:00:00", "ExpirationDate": "2011/07/26 00:00:00", "LPMeetingAcceptDueDate": "", "OverheadBeginDate": "", "OverheadEndDate": ""
-}, "ServiceArea": {
-"PrimaryServiceAreaCode": { "SACode": "ZZGL103"
-}, "AdditionalServiceAreaCodes": {
-"SACode": [ "ZZL01", "ZZL02", "ZZL03"
-] }
-}, "Excavator": {
-"CompanyName": "John Doe CONSTRUCTION", "Address": "555 Some RD",
-"City": "SOME PARK",
-"State": "ZZ",
-"Zip": "55555", "Type": "Excavator", "Contact": {
-"Name": "Johnny Doe",
-"Phone": "1115552345",
-"Email": "example@example.com"
-}, "FieldContact": {
-"Name": "Field Contact",
-"Phone": "1235557924",
-"Email": "example@example.com"
-},
-"CrewOnsite": "true" },
-"ExcavationInfo": {
-"TypeOfWork": "rpr man hole tops", "WorkDoneFor": "gpc",
-"ProjectDuration": "60 days", "ProjectStartDate": "2011/07/08 07:00:00", "Explosives": "No",
-
- "UndergroundOverhead": "Underground",
-"HorizontalBoring": "Road, Driveway, and Sidewalk",
-"Whitelined": "No",
-"LocateInstructions": "locate along the r/o/w on both sides of the rd - including the rd itself -
-from inter to inter ",
-"Remarks": "Previous Request Number:05161-120-011\n\n\t\t\tPrevious Request
-Number:06044-254-020\n\n\t\t\tPrevious Request Number:06171-300-030", "DigsiteInfo": {
-"LookupBy": "MANUAL", "LocationType": "Multiple Address", "Subdivision": "",
-"AddressInfo": {
-"State": "ST", "County": "COUNTY", "Place": "PLACE", "Zip": "",
-"Address": {
-"AddressNum": [ "Address 1", "Address 2"
-] },
-"Street": {
-"Prefix": "", "Name": "Trinity", "Type": "Ave", "Suffix": "SW"
-} },
-"NearStreet": {
-"State": "XX",
-"County": "SomeCounty", "Place": "City",
-"Prefix": "",
-"Name": "",
-"Type": "",
-"Suffix": ""
-}, "Intersection": {
-"ItoI": [{
-"State": "XX",
-"County": "FULERTON", "Place": "NORCROSS",
-
-"Prefix": "", "Name": "London", "Type": "St", "Suffix": "SW"
-}, {
-"State": "ZZ", "County": "COUNTY", "Place": "ATLANTA", "Prefix": "",
-"Name": "Jefferson", "Type": "Ave", "Suffix": "SW"
-} ]
-},
-"WellKnownText": "POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"
-} }
-}
-  
-ActionDispatch::Http::Parameters::ParseError (765: unexpected token at '{
-"ContactCenter": "UPCA", "RequestNumber": "09252012-00001", "ReferenceRequestNumber": "", "VersionNumber": "0", "SequenceNumber": "2421", "RequestType": "Normal", "RequestAction": "Restake", "DateTimes": {
-"RequestTakenDateTime": "2011/07/02 23:09:38", "TransmissionDateTime": "",
-"LegalDateTime": "2011/07/08 07:00:00", "ResponseDueDateTime": "2011/07/13 23:59:59",
- "RestakeDate": "2011/07/21 00:00:00", "ExpirationDate": "2011/07/26 00:00:00", "LPMeetingAcceptDueDate": "", "OverheadBeginDate": "", "OverheadEndDate": ""
-}, "ServiceArea": {
-"PrimaryServiceAreaCode": { "SACode": "ZZGL103"
-}, "AdditionalServiceAreaCodes": {
-"SACode": [ "ZZL01", "ZZL02", "ZZL03"
-] }
-}, "Excavator": {
-"CompanyName": "John Doe CONSTRUCTION", "Address": "555 Some RD",
-"City": "SOME PARK",
-"State": "ZZ",
-"Zip": "55555", "Type": "Excavator", "Contact": {
-"Name": "Johnny Doe",
-"Phone": "1115552345",
-"Email": "example@example.com"
-}, "FieldContact": {
-"Name": "Field Contact",
-"Phone": "1235557924",
-"Email": "example@example.com"
-},
-"CrewOnsite": "true" },
-"ExcavationInfo": {
-"TypeOfWork": "rpr man hole tops", "WorkDoneFor": "gpc",
-"ProjectDuration": "60 days", "ProjectStartDate": "2011/07/08 07:00:00", "Explosives": "No",
-
- "UndergroundOverhead": "Underground",
-"HorizontalBoring": "Road, Driveway, and Sidewalk",
-"Whitelined": "No",
-"LocateInstructions": "locate along the r/o/w on both sides of the rd - including the rd itself -
-from inter to inter ",
-"Remarks": "Previous Request Number:05161-120-011\n\n\t\t\tPrevious Request
-Number:06044-254-020\n\n\t\t\tPrevious Request Number:06171-300-030", "DigsiteInfo": {
-"LookupBy": "MANUAL", "LocationType": "Multiple Address", "Subdivision": "",
-"AddressInfo": {
-"State": "ST", "County": "COUNTY", "Place": "PLACE", "Zip": "",
-"Address": {
-"AddressNum": [ "Address 1", "Address 2"
-] },
-"Street": {
-"Prefix": "", "Name": "Trinity", "Type": "Ave", "Suffix": "SW"
-} },
-"NearStreet": {
-"State": "XX",
-"County": "SomeCounty", "Place": "City",
-"Prefix": "",
-"Name": "",
-"Type": "",
-"Suffix": ""
-}, "Intersection": {
-"ItoI": [{
-"State": "XX",
-"County": "FULERTON", "Place": "NORCROSS",
-
-"Prefix": "", "Name": "London", "Type": "St", "Suffix": "SW"
-}, {
-"State": "ZZ", "County": "COUNTY", "Place": "ATLANTA", "Prefix": "",
-"Name": "Jefferson", "Type": "Ave", "Suffix": "SW"
-} ]
-},
-"WellKnownText": "POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"
-} }
-}'):
-  
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
-actionpack (5.2.1) lib/action_dispatch/http/request.rb:381:in `block in POST'
-rack (2.0.5) lib/rack/request.rb:57:in `fetch'
-rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
-actionpack (5.2.1) lib/action_dispatch/http/request.rb:380:in `POST'
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:55:in `parameters'
-actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
-actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
-activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
-actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
-actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
-actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
-rack (2.0.5) lib/rack/etag.rb:25:in `call'
-rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
-rack (2.0.5) lib/rack/head.rb:12:in `call'
-activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.0.5) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
-railties (5.2.1) lib/rails/engine.rb:524:in `call'
-puma (3.12.0) lib/puma/configuration.rb:225:in `call'
-puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
-puma (3.12.0) lib/puma/server.rb:472:in `process_client'
-puma (3.12.0) lib/puma/server.rb:332:in `block in run'
-puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 09:32:42 +0530
-Error occurred while parsing request parameters.
-Contents:
-
-{"ContactCenter": "UPCA", "RequestNumber": "09252012-00001", "ReferenceRequestNumber": "", "VersionNumber": "0", "SequenceNumber": "2421", "RequestType": "Normal", "RequestAction": "Restake", "DateTimes": {
-"RequestTakenDateTime": "2011/07/02 23:09:38", "TransmissionDateTime": "",
-"LegalDateTime": "2011/07/08 07:00:00", "ResponseDueDateTime": "2011/07/13 23:59:59",
- "RestakeDate": "2011/07/21 00:00:00", "ExpirationDate": "2011/07/26 00:00:00", "LPMeetingAcceptDueDate": "", "OverheadBeginDate": "", "OverheadEndDate": ""
-}, "ServiceArea": {
-"PrimaryServiceAreaCode": { "SACode": "ZZGL103"
-}, "AdditionalServiceAreaCodes": {
-"SACode": [ "ZZL01", "ZZL02", "ZZL03"
-] }
-}, "Excavator": {
-"CompanyName": "John Doe CONSTRUCTION", "Address": "555 Some RD",
-"City": "SOME PARK",
-"State": "ZZ",
-"Zip": "55555", "Type": "Excavator", "Contact": {
-"Name": "Johnny Doe",
-"Phone": "1115552345",
-"Email": "example@example.com"
-}, "FieldContact": {
-"Name": "Field Contact",
-"Phone": "1235557924",
-"Email": "example@example.com"
-},
-"CrewOnsite": "true" },
-"ExcavationInfo": {
-"TypeOfWork": "rpr man hole tops", "WorkDoneFor": "gpc",
-"ProjectDuration": "60 days", "ProjectStartDate": "2011/07/08 07:00:00", "Explosives": "No",
-
- "UndergroundOverhead": "Underground",
-"HorizontalBoring": "Road, Driveway, and Sidewalk",
-"Whitelined": "No",
-"LocateInstructions": "locate along the r/o/w on both sides of the rd - including the rd itself -
-from inter to inter ",
-"Remarks": "Previous Request Number:05161-120-011\n\n\t\t\tPrevious Request
-Number:06044-254-020\n\n\t\t\tPrevious Request Number:06171-300-030", "DigsiteInfo": {
-"LookupBy": "MANUAL", "LocationType": "Multiple Address", "Subdivision": "",
-"AddressInfo": {
-"State": "ST", "County": "COUNTY", "Place": "PLACE", "Zip": "",
-"Address": {
-"AddressNum": [ "Address 1", "Address 2"
-] },
-"Street": {
-"Prefix": "", "Name": "Trinity", "Type": "Ave", "Suffix": "SW"
-} },
-"NearStreet": {
-"State": "XX",
-"County": "SomeCounty", "Place": "City",
-"Prefix": "",
-"Name": "",
-"Type": "",
-"Suffix": ""
-}, "Intersection": {
-"ItoI": [{
-"State": "XX",
-"County": "FULERTON", "Place": "NORCROSS",
-
-"Prefix": "", "Name": "London", "Type": "St", "Suffix": "SW"
-}, {
-"State": "ZZ", "County": "COUNTY", "Place": "ATLANTA", "Prefix": "",
-"Name": "Jefferson", "Type": "Ave", "Suffix": "SW"
-} ]
-},
-"WellKnownText": "POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"
-} }
-}
-  
-ActionDispatch::Http::Parameters::ParseError (765: unexpected token at '{"ContactCenter": "UPCA", "RequestNumber": "09252012-00001", "ReferenceRequestNumber": "", "VersionNumber": "0", "SequenceNumber": "2421", "RequestType": "Normal", "RequestAction": "Restake", "DateTimes": {
-"RequestTakenDateTime": "2011/07/02 23:09:38", "TransmissionDateTime": "",
-"LegalDateTime": "2011/07/08 07:00:00", "ResponseDueDateTime": "2011/07/13 23:59:59",
- "RestakeDate": "2011/07/21 00:00:00", "ExpirationDate": "2011/07/26 00:00:00", "LPMeetingAcceptDueDate": "", "OverheadBeginDate": "", "OverheadEndDate": ""
-}, "ServiceArea": {
-"PrimaryServiceAreaCode": { "SACode": "ZZGL103"
-}, "AdditionalServiceAreaCodes": {
-"SACode": [ "ZZL01", "ZZL02", "ZZL03"
-] }
-}, "Excavator": {
-"CompanyName": "John Doe CONSTRUCTION", "Address": "555 Some RD",
-"City": "SOME PARK",
-"State": "ZZ",
-"Zip": "55555", "Type": "Excavator", "Contact": {
-"Name": "Johnny Doe",
-"Phone": "1115552345",
-"Email": "example@example.com"
-}, "FieldContact": {
-"Name": "Field Contact",
-"Phone": "1235557924",
-"Email": "example@example.com"
-},
-"CrewOnsite": "true" },
-"ExcavationInfo": {
-"TypeOfWork": "rpr man hole tops", "WorkDoneFor": "gpc",
-"ProjectDuration": "60 days", "ProjectStartDate": "2011/07/08 07:00:00", "Explosives": "No",
-
- "UndergroundOverhead": "Underground",
-"HorizontalBoring": "Road, Driveway, and Sidewalk",
-"Whitelined": "No",
-"LocateInstructions": "locate along the r/o/w on both sides of the rd - including the rd itself -
-from inter to inter ",
-"Remarks": "Previous Request Number:05161-120-011\n\n\t\t\tPrevious Request
-Number:06044-254-020\n\n\t\t\tPrevious Request Number:06171-300-030", "DigsiteInfo": {
-"LookupBy": "MANUAL", "LocationType": "Multiple Address", "Subdivision": "",
-"AddressInfo": {
-"State": "ST", "County": "COUNTY", "Place": "PLACE", "Zip": "",
-"Address": {
-"AddressNum": [ "Address 1", "Address 2"
-] },
-"Street": {
-"Prefix": "", "Name": "Trinity", "Type": "Ave", "Suffix": "SW"
-} },
-"NearStreet": {
-"State": "XX",
-"County": "SomeCounty", "Place": "City",
-"Prefix": "",
-"Name": "",
-"Type": "",
-"Suffix": ""
-}, "Intersection": {
-"ItoI": [{
-"State": "XX",
-"County": "FULERTON", "Place": "NORCROSS",
-
-"Prefix": "", "Name": "London", "Type": "St", "Suffix": "SW"
-}, {
-"State": "ZZ", "County": "COUNTY", "Place": "ATLANTA", "Prefix": "",
-"Name": "Jefferson", "Type": "Ave", "Suffix": "SW"
-} ]
-},
-"WellKnownText": "POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"
-} }
-}'):
-  
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
-actionpack (5.2.1) lib/action_dispatch/http/request.rb:381:in `block in POST'
-rack (2.0.5) lib/rack/request.rb:57:in `fetch'
-rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
-actionpack (5.2.1) lib/action_dispatch/http/request.rb:380:in `POST'
-actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:55:in `parameters'
-actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
-actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
-activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
-actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
-actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
-actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
-rack (2.0.5) lib/rack/etag.rb:25:in `call'
-rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
-rack (2.0.5) lib/rack/head.rb:12:in `call'
-activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.0.5) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
-railties (5.2.1) lib/rails/engine.rb:524:in `call'
-puma (3.12.0) lib/puma/configuration.rb:225:in `call'
-puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
-puma (3.12.0) lib/puma/server.rb:472:in `process_client'
-puma (3.12.0) lib/puma/server.rb:332:in `block in run'
-puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 09:42:14 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"RequestNumber"=>"09252012-00001", "ReferenceRequestNumber"=>"", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "Excavator"=>{"CompanyName"=>"John Doe CONSTRUCTION", "Address"=>"555 Some RD", "City"=>"SOME PARK", "State"=>"ZZ", "Zip"=>"3333", "CrewOnsite"=>"true"}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}, "ticket"=>{"RequestNumber"=>"09252012-00001", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}}}
-Unpermitted parameter: :SACode
-Unpermitted parameters: :ReferenceRequestNumber, :Excavator, :ticket
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/tickets_controller.rb:5
-  [1m[36mTicket Create (3.4ms)[0m  [1m[32mINSERT INTO "tickets" ("RequestNumber", "SequenceNumber", "RequestType", "DateTimes", "ServiceArea", "DigsiteInfo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["RequestNumber", 9252012], ["SequenceNumber", 2421], ["RequestType", "Normal"], ["DateTimes", "\"ResponseDueDateTime\"=>\"2011/07/13 23:59:59\""], ["ServiceArea", "\"PrimaryServiceAreaCode\"=>\"{\\\"SACode\\\"=>\\\"ZZGL103\\\"}\", \"AdditionalServiceAreaCodes\"=>\"{}\""], ["DigsiteInfo", "\"WellKnownText\"=>\"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))\""], ["created_at", "2018-09-14 04:12:14.239135"], ["updated_at", "2018-09-14 04:12:14.239135"]]
-  ↳ app/controllers/tickets_controller.rb:5
-  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/tickets_controller.rb:5
-Unpermitted parameters: :City, :State, :Zip
-Unpermitted parameters: :RequestNumber, :ReferenceRequestNumber, :SequenceNumber, :RequestType, :DateTimes, :ServiceArea, :DigsiteInfo, :ticket
-Completed 500 Internal Server Error in 33ms (Views: 0.1ms | ActiveRecord: 15.9ms)
+Started GET "/tickets/1" for ::1 at 2018-09-14 10:59:33 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.8ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 1]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (3.9ms)
+Completed 200 OK in 36ms (Views: 30.7ms | ActiveRecord: 0.8ms)
 
 
-  
-AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
-  
-app/controllers/tickets_controller.rb:7:in `create'
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 09:42:34 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"RequestNumber"=>"09252012-00001", "ReferenceRequestNumber"=>"", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "Excavator"=>{"CompanyName"=>"John Doe CONSTRUCTION", "Address"=>"555 Some RD", "City"=>"SOME PARK", "State"=>"ZZ", "Zip"=>"3333", "CrewOnsite"=>"true"}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}, "ticket"=>{"RequestNumber"=>"09252012-00001", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}}}
-Unpermitted parameter: :SACode
-Unpermitted parameters: :ReferenceRequestNumber, :Excavator, :ticket
-  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/tickets_controller.rb:4
-  [1m[36mTicket Create (0.4ms)[0m  [1m[32mINSERT INTO "tickets" ("RequestNumber", "SequenceNumber", "RequestType", "DateTimes", "ServiceArea", "DigsiteInfo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["RequestNumber", 9252012], ["SequenceNumber", 2421], ["RequestType", "Normal"], ["DateTimes", "\"ResponseDueDateTime\"=>\"2011/07/13 23:59:59\""], ["ServiceArea", "\"PrimaryServiceAreaCode\"=>\"{\\\"SACode\\\"=>\\\"ZZGL103\\\"}\", \"AdditionalServiceAreaCodes\"=>\"{}\""], ["DigsiteInfo", "\"WellKnownText\"=>\"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))\""], ["created_at", "2018-09-14 04:12:34.680137"], ["updated_at", "2018-09-14 04:12:34.680137"]]
-  ↳ app/controllers/tickets_controller.rb:4
-  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/tickets_controller.rb:4
-Unpermitted parameters: :City, :State, :Zip
-Unpermitted parameters: :RequestNumber, :ReferenceRequestNumber, :SequenceNumber, :RequestType, :DateTimes, :ServiceArea, :DigsiteInfo, :ticket
-Completed 201 Created in 33ms (Views: 0.1ms | ActiveRecord: 14.3ms)
+Started GET "/" for ::1 at 2018-09-14 10:59:37 +0530
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (3.8ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:13
+  Rendered tickets/index.erb within layouts/application (23.1ms)
+Completed 200 OK in 59ms (Views: 41.9ms | ActiveRecord: 8.0ms)
 
 
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 09:43:36 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"RequestNumber"=>"09252012-00001", "ReferenceRequestNumber"=>"", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "Excavator"=>{"CompanyName"=>"John Doe CONSTRUCTION", "Address"=>"555 Some RD", "City"=>"SOME PARK", "State"=>"ZZ", "Zip"=>"3333", "CrewOnsite"=>"true"}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}, "ticket"=>{"RequestNumber"=>"09252012-00001", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}}}
-Unpermitted parameter: :SACode
-Unpermitted parameters: :ReferenceRequestNumber, :Excavator, :ticket
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/tickets_controller.rb:4
-  [1m[36mTicket Create (0.4ms)[0m  [1m[32mINSERT INTO "tickets" ("RequestNumber", "SequenceNumber", "RequestType", "DateTimes", "ServiceArea", "DigsiteInfo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["RequestNumber", 9252012], ["SequenceNumber", 2421], ["RequestType", "Normal"], ["DateTimes", "\"ResponseDueDateTime\"=>\"2011/07/13 23:59:59\""], ["ServiceArea", "\"PrimaryServiceAreaCode\"=>\"{\\\"SACode\\\"=>\\\"ZZGL103\\\"}\", \"AdditionalServiceAreaCodes\"=>\"{}\""], ["DigsiteInfo", "\"WellKnownText\"=>\"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))\""], ["created_at", "2018-09-14 04:13:36.291473"], ["updated_at", "2018-09-14 04:13:36.291473"]]
-  ↳ app/controllers/tickets_controller.rb:4
-  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/tickets_controller.rb:4
-Unpermitted parameters: :City, :State, :Zip
-Unpermitted parameters: :RequestNumber, :ReferenceRequestNumber, :SequenceNumber, :RequestType, :DateTimes, :ServiceArea, :DigsiteInfo, :ticket
-Completed 201 Created in 33ms (Views: 3.0ms | ActiveRecord: 13.1ms)
+Started GET "/tickets/1" for ::1 at 2018-09-14 10:59:41 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.6ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 1]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (2.9ms)
+Completed 200 OK in 38ms (Views: 28.8ms | ActiveRecord: 0.6ms)
 
 
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 09:44:48 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"RequestNumber"=>"09252012-00001", "ReferenceRequestNumber"=>"", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "Excavator"=>{"CompanyName"=>"John Doe CONSTRUCTION", "Address"=>"555 Some RD", "City"=>"SOME PARK", "State"=>"ZZ", "Zip"=>"3333", "CrewOnsite"=>"true"}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}, "ticket"=>{"RequestNumber"=>"09252012-00001", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}}}
-Unpermitted parameter: :SACode
-Unpermitted parameters: :ReferenceRequestNumber, :Excavator, :ticket
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/tickets_controller.rb:4
-  [1m[36mTicket Create (0.4ms)[0m  [1m[32mINSERT INTO "tickets" ("RequestNumber", "SequenceNumber", "RequestType", "DateTimes", "ServiceArea", "DigsiteInfo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["RequestNumber", 9252012], ["SequenceNumber", 2421], ["RequestType", "Normal"], ["DateTimes", "\"ResponseDueDateTime\"=>\"2011/07/13 23:59:59\""], ["ServiceArea", "\"PrimaryServiceAreaCode\"=>\"{\\\"SACode\\\"=>\\\"ZZGL103\\\"}\", \"AdditionalServiceAreaCodes\"=>\"{}\""], ["DigsiteInfo", "\"WellKnownText\"=>\"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))\""], ["created_at", "2018-09-14 04:14:48.565122"], ["updated_at", "2018-09-14 04:14:48.565122"]]
-  ↳ app/controllers/tickets_controller.rb:4
-  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/tickets_controller.rb:4
-Unpermitted parameters: :City, :State, :Zip
-Unpermitted parameters: :RequestNumber, :ReferenceRequestNumber, :SequenceNumber, :RequestType, :DateTimes, :ServiceArea, :DigsiteInfo, :ticket
-Completed 201 Created in 34ms (Views: 0.6ms | ActiveRecord: 13.6ms)
+Started GET "/tickets/1" for ::1 at 2018-09-14 10:59:44 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (3.2ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 1]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (5.2ms)
+Completed 200 OK in 34ms (Views: 26.5ms | ActiveRecord: 3.2ms)
 
 
-Started POST "/tickets" for 127.0.0.1 at 2018-09-14 09:46:14 +0530
-Processing by TicketsController#create as */*
-  Parameters: {"RequestNumber"=>"09252012-00001", "ReferenceRequestNumber"=>"", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "Excavator"=>{"CompanyName"=>"John Doe CONSTRUCTION", "Address"=>"555 Some RD", "City"=>"SOME PARK", "State"=>"ZZ", "Zip"=>"3333", "CrewOnsite"=>"true"}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}, "ticket"=>{"RequestNumber"=>"09252012-00001", "SequenceNumber"=>"2421", "RequestType"=>"Normal", "DateTimes"=>{"ResponseDueDateTime"=>"2011/07/13 23:59:59"}, "ServiceArea"=>{"PrimaryServiceAreaCode"=>{"SACode"=>"ZZGL103"}, "AdditionalServiceAreaCodes"=>{"SACode"=>["ZZL01", "ZZL02", "ZZL03"]}}, "DigsiteInfo"=>{"WellKnownText"=>"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))"}}}
-Unpermitted parameter: :SACode
-Unpermitted parameters: :ReferenceRequestNumber, :Excavator, :ticket
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/tickets_controller.rb:4
-  [1m[36mTicket Create (0.4ms)[0m  [1m[32mINSERT INTO "tickets" ("RequestNumber", "SequenceNumber", "RequestType", "DateTimes", "ServiceArea", "DigsiteInfo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["RequestNumber", 9252012], ["SequenceNumber", 2421], ["RequestType", "Normal"], ["DateTimes", "\"ResponseDueDateTime\"=>\"2011/07/13 23:59:59\""], ["ServiceArea", "\"PrimaryServiceAreaCode\"=>\"{\\\"SACode\\\"=>\\\"ZZGL103\\\"}\", \"AdditionalServiceAreaCodes\"=>\"{}\""], ["DigsiteInfo", "\"WellKnownText\"=>\"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))\""], ["created_at", "2018-09-14 04:16:14.107245"], ["updated_at", "2018-09-14 04:16:14.107245"]]
-  ↳ app/controllers/tickets_controller.rb:4
-  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/tickets_controller.rb:4
-Unpermitted parameters: :City, :State, :Zip
-Unpermitted parameters: :RequestNumber, :ReferenceRequestNumber, :SequenceNumber, :RequestType, :DateTimes, :ServiceArea, :DigsiteInfo, :ticket
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/tickets_controller.rb:6
-  [1m[36mExcavator Create (0.6ms)[0m  [1m[32mINSERT INTO "excavators" ("Excavator", "ticket_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["Excavator", "\"CompanyName\"=>\"John Doe CONSTRUCTION\", \"Address\"=>\"555 Some RD\", \"CrewOnsite\"=>\"true\""], ["ticket_id", 8], ["created_at", "2018-09-14 04:16:14.129491"], ["updated_at", "2018-09-14 04:16:14.129491"]]
-  ↳ app/controllers/tickets_controller.rb:6
-  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/tickets_controller.rb:6
-Completed 201 Created in 42ms (Views: 1.2ms | ActiveRecord: 14.7ms)
+Started GET "/tickets/1" for ::1 at 2018-09-14 11:00:14 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.5ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 1]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (3.2ms)
+Completed 200 OK in 42ms (Views: 33.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2018-09-14 11:00:23 +0530
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (0.9ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:13
+  Rendered tickets/index.erb within layouts/application (6.8ms)
+Completed 200 OK in 38ms (Views: 32.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tickets/1" for ::1 at 2018-09-14 11:00:45 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.5ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 1]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (2.7ms)
+Completed 200 OK in 36ms (Views: 30.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tickets/1" for ::1 at 2018-09-14 11:01:19 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.4ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 1]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (2.9ms)
+Completed 200 OK in 31ms (Views: 23.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tickets/1" for ::1 at 2018-09-14 11:01:28 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.4ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 1]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (2.0ms)
+Completed 200 OK in 34ms (Views: 30.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tickets/1" for ::1 at 2018-09-14 11:01:45 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.4ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 1]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tickets/1" for ::1 at 2018-09-14 11:02:25 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.3ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 1]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (1.8ms)
+Completed 200 OK in 30ms (Views: 25.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2018-09-14 11:02:27 +0530
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (0.7ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:13
+  Rendered tickets/index.erb within layouts/application (5.2ms)
+Completed 200 OK in 40ms (Views: 33.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tickets/8" for ::1 at 2018-09-14 11:02:31 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"8"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.5ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 8]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (12.9ms)
+Completed 200 OK in 49ms (Views: 39.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/tickets/8" for ::1 at 2018-09-14 11:03:56 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"8"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.4ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 8]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (2.2ms)
+Completed 200 OK in 34ms (Views: 28.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2018-09-14 11:04:10 +0530
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (0.7ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:13
+  Rendered tickets/index.erb within layouts/application (6.0ms)
+Completed 200 OK in 45ms (Views: 34.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tickets/2" for ::1 at 2018-09-14 11:04:12 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.5ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 2]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (2.9ms)
+Completed 200 OK in 38ms (Views: 30.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2018-09-14 11:04:15 +0530
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (0.9ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:13
+  Rendered tickets/index.erb within layouts/application (7.5ms)
+Completed 200 OK in 50ms (Views: 41.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tickets/1" for ::1 at 2018-09-14 11:04:17 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.5ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 1]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (2.7ms)
+Completed 200 OK in 39ms (Views: 34.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2018-09-14 11:04:43 +0530
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (1.6ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:13
+  Rendered tickets/index.erb within layouts/application (10.8ms)
+Completed 200 OK in 60ms (Views: 51.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2018-09-14 11:05:00 +0530
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:13
+  Rendered tickets/index.erb within layouts/application (4.0ms)
+Completed 200 OK in 32ms (Views: 27.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2018-09-14 11:05:06 +0530
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:13
+  Rendered tickets/index.erb within layouts/application (3.3ms)
+Completed 200 OK in 31ms (Views: 27.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tickets/5" for ::1 at 2018-09-14 11:05:28 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"5"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.5ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 5]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (2.2ms)
+Completed 200 OK in 48ms (Views: 40.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2018-09-14 11:05:32 +0530
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.erb within layouts/application
+  [1m[36mTicket Load (0.8ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.erb:13
+  Rendered tickets/index.erb within layouts/application (7.4ms)
+Completed 200 OK in 64ms (Views: 57.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tickets/8" for ::1 at 2018-09-14 11:05:36 +0530
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"8"}
+  Rendering tickets/show.erb within layouts/application
+  [1m[36mExcavator Load (0.8ms)[0m  [1m[34mSELECT "excavators".* FROM "excavators" WHERE "excavators"."ticket_id" = $1[0m  [["ticket_id", 8]]
+  ↳ app/views/tickets/show.erb:11
+  Rendered tickets/show.erb within layouts/application (3.4ms)
+Completed 200 OK in 37ms (Views: 31.8ms | ActiveRecord: 0.8ms)
 
 

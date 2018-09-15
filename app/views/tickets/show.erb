@@ -1,0 +1,20 @@
+<h1>Excavators of Ticket</h1>
+<div>
+  <table>
+    <tr>
+      <th>CompanyName</th>
+      <th>Address</th>
+      <th>CrewOnsite</th>
+    </tr>
+    <tbody>
+    <tr>
+      <%@excavators.each do |exc| %>
+      <td><%= exc.Excavator["CompanyName"]%></td>
+      <td><%= exc.Excavator["Address"]%></td>
+      <td><%= exc.Excavator["CrewOnsite"]%></td>
+      <%end %>
+    </tr>
+    </tbody>
+  </table>
+  <%= link_to "Back", root_path %>
+</div>
